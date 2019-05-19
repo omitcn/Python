@@ -1,0 +1,214 @@
+<!--
+--------《Python从菜鸟到高手》源代码------------
+
+欧瑞科技版权所有
+作者：李宁
+如有任何技术问题，请加QQ技术讨论群：264268059    
+或关注“极客起源”订阅号或“欧瑞科技”服务号或扫码关注订阅号和服务号，二维码在源代码根目录
+如果QQ群已满，请访问https://geekori.com，在右侧查看最新的QQ群，同时可以扫码关注公众号
+
+“欧瑞学院”是欧瑞科技旗下在线IT教育学院，包含大量IT前沿视频课程，
+请访问http://geekori.com/edu或关注前面提到的订阅号和服务号，进入移动版的欧瑞学院
+
+“极客题库”是欧瑞科技旗下在线题库，请扫描源代码根目录中的小程序码安装“极客题库”小程序
+
+关于更多信息，请访问下面的页面
+https://geekori.com/help/videocourse/readme.html
+
+
+
+-->
+{% extends "base.html" %}
+{% block title %}
+  {{recInfo.title}}
+{% endblock %}
+{% block mainbody %}
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="renderer" content="webkit" />
+  <link rel="stylesheet" href="//c.58cdn.com.cn/job/pc/full/detail/0.1/css/job_detail_v20171208194251.css" />
+  <link type="text/css" href="//c.58cdn.com.cn/crop/biz/pc/marketing/e58-stationing/css/insert_v20170802144145.css" rel="stylesheet" /> 
+  <link rel="stylesheet" href="//c.58cdn.com.cn/job/pc/resume/delivery/1.0/css/pc_delivery_v20170803183150.css" />
+  <link rel="stylesheet" href="//c.58cdn.com.cn/componentsLoader/dist/CompontsLoader_v20171216170843.css" />
+  <link rel="stylesheet" href="//c.58cdn.com.cn/crop/biz/pc/entrance/commercial_peg_v20171214192254.css" /> 
+
+ </head>
+ <body>
+  <div id="commonTopbar" class="commonTopbar">
+    <div class="bar_right" style="margin-right:10%;">
+      <div id="commonTopbar_login">
+        {% if username %}
+        欢迎您~ <font color="red">{{username}}</font>
+        <span class="gap">|</span>
+        <a href="/logout" target="_self">注销</a>
+        {% else %}
+        <a href="/login" target="_self">登录</a>
+        <span class="gap">|</span>
+        <a href="/register" target="_self">注册</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="header">
+   <div class="header_con job_detail_top_ad" id="brand_detial_top_banner"></div>
+   <div class="header_con header_fabu">
+    <a class="icon_58zp" href="http://sy.58.com/job.shtml" target="_blank"></a>
+   </div>
+  </div> 
+  <div class="con">
+   <div class="operate_bar_mask">
+     &nbsp;
+   </div>
+   <div class="leftCon">
+    <div class="item_con pos_info"> 
+     <div class="pos_base_statistics">
+      <div class="right clearfix">
+       <a class="pos_right_operate enshrineBtn" href="javascript:void(0)"><i class="icon iconfont icon_sckx iconCur"></i><i class="txt">收藏</i></a>
+       <span class="pos_right_operate bdsharebuttonbox" data-tag="share_1"><a class="bds_more sharePosBtn icon-share" data-cmd="more">分享</a></span>
+       <div class="pos_right_operate jubao">
+        <i class="icon iconfont icon_jubao"></i>
+        <i class="txt">举报</i>
+       </div>
+      </div>
+     </div>
+
+    <div class="pos_base_info">
+        <span class="pos_title"> {{recInfo.job_name}}</span> 
+        <span class="pos_salary">{{recInfo.money}}<span class="font18">元/月</span></span> 
+    </div>
+    <span class="pos_name">{{recInfo.title}}+ </span> 
+    <div class="pos_welfare"> 
+        {%for item in recInfo.mname_list%}
+        <span class="pos_welfare_item">{{item}}</span> 
+        {%endfor%}
+    </div> 
+    <div class="pos_base_condition">
+        <span class="item_condition pad_left_none">学历 : {{recInfo.edu}} </span>
+        <span class="item_condition border_right_None">工作经验 : {{recInfo.exp}}</span>
+    </div>
+    <div class="pos_operate"> 
+        <a class="btn btn-orange btn-large applyJobBtn" href="javascript:void(0)">申请职位</a> 
+    </div>
+
+    
+     <script>
+      $('.applyJobBtn').click(function(){
+        var rid={{recInfo.id}};
+        if(confirm('确认申请此职位?')){
+          $.ajax({
+              url:"/apply/",
+              data:{rid:rid},
+              dataType:"TEXT",
+              type:"POST",
+              success:function(data){
+                if(data=='success'){
+                  alert('申请成功!')
+                }else{
+                  alert('您已经申请过了!');
+                }
+              }
+          });
+        }
+      })
+     </script>
+
+
+     <div class="pos_tips"> 
+      <span class="sign">提示：</span>刷信誉、淘宝刷钻、YY网络兼职、加YY联系的职位都是骗子！收取费用或押金都可能有欺诈嫌疑，请警惕！ 
+     </div> 
+
+
+    </div>
+
+    <div class="item_con">
+     <div class="item_con" id="ugcDetailDiv"></div> 
+     <div class="subitem_con gp_jb">
+      <div class="one">
+       <dl>
+        <dt class="icon"></dt>
+        <dd class="txt">
+         <p class="title">58管赔 安全入职</p>
+         <p class="des">求职者若被企业骗取押金等费用，58管赔！</p>
+        </dd>
+       </dl>
+       <a class="btn" target="_blank" href="http://baozhang.58.com/zhaopin/">申请</a>
+      </div>
+     </div> 
+     <div class="subitem_con apply_notes"></div>
+    </div>
+    <div class="item_con"> 
+     <div class="subitem_con " id="pc_rec_position"></div> 
+     <div class="subitem_con " id="advice_position"></div>
+     <div class="subitem_con " id="direct_ad_bottom"></div>
+     <div class="subitem_con detailBottomAd">
+      <div id="googlead_list"></div>
+     </div> 
+     <div class="subitem_con seo_con">
+      <ul class="tab_ul"> 
+       <li class="tab_li"><a href="javascript:void(0)" class="tab_link " id="relativeRecommend">相关推荐</a></li> 
+       <li class="tab_li"><a href="javascript:void(0)" class="tab_link " id="importantCity">重点城市</a></li> 
+       <li class="tab_li"><a href="javascript:void(0)" class="tab_link " id="hotRecommend">热门推荐</a></li> 
+       <li class="tab_li"><a href="javascript:void(0)" class="tab_link " id="hotCate">热门类别</a></li> 
+      </ul>
+      <div class="tab_con top_search_con"> 
+      </div>
+      <div class="tab_con relativePos_con"> 
+      </div>
+
+     </div> 
+    </div>
+   </div>
+  </div> 
+  <div id="footer" class="footer">
+   <div id="upWrap">
+    <a target="_blank" href="http://about.58.com/help.html" rel="nofollow">常见问题</a>
+    <span>|</span>
+    <a target="_blank" href="http://about.58.com/" rel="nofollow">帮助中心</a>
+    <span>|</span>
+    <a target="_blank" href="http://about.58.com/feedback.html" rel="nofollow">意见反馈</a>
+    <span>|</span>
+    <a target="_blank" href="http://about.58.com/home/" rel="nofollow">了解58同城</a>
+    <span>|</span>
+    <a target="_blank" href="http://about.58.com/hr/" rel="nofollow">加入58同城</a>
+    <span>|</span>
+    <a target="_blank" href="http://fanqizha.58.com/" rel="nofollow">反欺诈联盟</a>
+    <span>|</span>
+    <a target="_blank" href="http://110.58.com" rel="nofollow">报案平台</a>
+    <span>|</span>
+    <a target="_blank" href="http://e.58.com" rel="nofollow">推广服务</a>
+    <span>|</span>
+    <a target="_blank" href="http://biz.58.com" rel="nofollow">渠道招商</a>
+    <span>|</span>
+    <a target="_blank" href="http://baozhang.58.com" rel="nofollow">先行赔付</a>
+    <span>|</span>
+    <a target="_blank" href="http://ir.58.com?PGTID=0d100000-0000-13da-8041-51f9a3a739fa&amp;ClickID=2" rel="nofollow">Investor Relations</a>
+   </div>
+   <div id="downWrap">
+    <em>2005-2016 58.com版权所有</em>
+    <span>|</span>
+    <em>京公网备案信息110105000809</em>
+    <span>|</span>
+    <a target="_blank" href="http://www.miibeian.gov.cn/" rel="nofollow">京ICP证060405</a>
+    <span>|</span>
+    <em>乙测资字11018014</em>
+    <span>|</span>
+    <a target="_blank" href="http://ir.58.com" rel="nofollow">Investor Relations</a>
+    <span>|</span>
+    <em>违法信息举报：4008135858&nbsp;&nbsp;jubao@58ganji.com</em>
+   </div>
+   <div class="fotBtmIcon">
+    <a target="_blank" id="fotBm_1" href="http://fanqizha.58.com"></a>
+    <a target="_blank" id="fotBm_2" href="http://www.12377.cn/"></a>
+    <a target="_blank" id="fotBm_3" href="http://www.12377.cn/node_548446.htm"></a>
+    <a target="_blank" id="fotBm_4" href="https://credit.szfw.org/CX20120918001650001720.html"></a>
+    <a target="_blank" id="fotBm_5" href="http://img.58cdn.com.cn/ui6/index/qyxinyong.jpg?v=3"></a>
+    <a target="_blank" id="fotBm_6" href="http://about.58.com/fqz/index.html"></a>
+   </div>
+  </div> 
+  <div id="zhiding-entrance-container" class="zhiding-hide"></div>
+ </body>
+</html>
+{% endblock %}

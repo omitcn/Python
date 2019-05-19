@@ -1,0 +1,21 @@
+/*
+--------《Python从菜鸟到高手》源代码------------
+
+欧瑞科技版权所有
+作者：李宁
+如有任何技术问题，请加QQ技术讨论群：264268059    
+或关注“极客起源”订阅号或“欧瑞科技”服务号或扫码关注订阅号和服务号，二维码在源代码根目录
+如果QQ群已满，请访问https://geekori.com，在右侧查看最新的QQ群，同时可以扫码关注公众号
+
+“欧瑞学院”是欧瑞科技旗下在线IT教育学院，包含大量IT前沿视频课程，
+请访问http://geekori.com/edu或关注前面提到的订阅号和服务号，进入移动版的欧瑞学院
+
+“极客题库”是欧瑞科技旗下在线题库，请扫描源代码根目录中的小程序码安装“极客题库”小程序
+
+关于更多信息，请访问下面的页面
+https://geekori.com/help/videocourse/readme.html
+
+
+
+*/
+#yui3-css-stamp.skin-sam-w-slider{display:none}.mt-slider{position:relative}.mt-slider-content{overflow:hidden}.mt-slider-sheet-container{position:relative;overflow:hidden;height:400px}.mt-slider-sheet{position:absolute;top:0;left:0}.mt-slider-next,.mt-slider-previous{left:0;top:0;background:url(/bs/file/?f=@mtfe/fe.core:w-slider/assets/skins/img/left.png@0.2.125) no-repeat;-webkit-transition:opacity .2s ease-out;-moz-transition:opacity .2s ease-out;-o-transition:opacity .2s ease-out;transition:opacity .2s ease-out}.mt-slider-next{left:auto;right:0;top:0;background:url(/bs/file/?f=@mtfe/fe.core:w-slider/assets/skins/img/right.png@0.2.125) no-repeat}.mt-slider-next:hover,.mt-slider-previous:hover{opacity:1!important;_filter:alpha(opacity=90)!important;cursor:pointer}.mt-slider-trigger-container{position:absolute;bottom:-20px;left:0;width:100%;font-size:0;text-align:center;background:#CEDCDD;height:20px;zoom:1}.mt-slider-trigger{position:relative;top:0;display:inline-block;margin-top:5px;margin-left:10px;height:11px;width:11px;background:url(/bs/file/?f=@mtfe/fe.core:w-slider/assets/skins/img/slider-dot.png@0.2.125) no-repeat;cursor:pointer;*display:inline;zoom:1}.mt-slider-current-trigger{background-position:-12px 0}#yui3-css-stamp.skin-sam-w-carousel-base{display:none}.widget-carousel-content{position:relative;overflow:hidden}.widget-carousel-list{position:absolute;top:0}.widget-carousel-content--horizontal .widget-carousel-list-item{float:left}.widget-carousel-navlink{position:absolute}.widget-carousel-content--horizontal .widget-carousel-navlink{top:50%;margin-top:-25px;width:40px;height:50px;background:url(/bs/file/?f=@mtfe/fe.core:w-carousel-base/assets/skins/sam/img/arrow.png@0.2.125) no-repeat;opacity:.4;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";filter:alpha(opacity=40)}.widget-carousel-content--horizontal .widget-carousel-navlink-prev{left:0;background-position:0 -25px}.widget-carousel-content--horizontal .widget-carousel-navlink-next{right:0;background-position:0 -100px}.widget-carousel-content:hover .widget-carousel-navlink{opacity:1}

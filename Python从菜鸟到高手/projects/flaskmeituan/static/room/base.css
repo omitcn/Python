@@ -1,0 +1,426 @@
+/*
+--------《Python从菜鸟到高手》源代码------------
+
+欧瑞科技版权所有
+作者：李宁
+如有任何技术问题，请加QQ技术讨论群：264268059    
+或关注“极客起源”订阅号或“欧瑞科技”服务号或扫码关注订阅号和服务号，二维码在源代码根目录
+如果QQ群已满，请访问https://geekori.com，在右侧查看最新的QQ群，同时可以扫码关注公众号
+
+“欧瑞学院”是欧瑞科技旗下在线IT教育学院，包含大量IT前沿视频课程，
+请访问http://geekori.com/edu或关注前面提到的订阅号和服务号，进入移动版的欧瑞学院
+
+“极客题库”是欧瑞科技旗下在线题库，请扫描源代码根目录中的小程序码安装“极客题库”小程序
+
+关于更多信息，请访问下面的页面
+https://geekori.com/help/videocourse/readme.html
+
+
+
+*/
+body {
+    color: #666;
+}
+
+.site-mast-branding {
+    position: relative;
+    margin: 0 auto;
+    height: 85px;
+    width: 1190px;
+    overflow: hidden;
+}
+
+.site-mast-branding .brand-info {
+    float: left;
+    margin: 30px 15px 14px;
+    border-left: 1px solid #ddd;
+    padding: 0 10px;
+    font-size: 26px;
+     line-height: 26px 
+}
+
+.site-mast-branding .site-logo {
+    float: left;
+    display: block;
+    width: 82px;
+    height: 54px;
+    margin-top: 14px;
+      text-indent: -100px;  
+      overflow: hidden;  
+      background-position: 0 -896px;  
+    background-image: url(//s0.meituan.net/bs/file/?f=fewww:www/css/si/base.png);
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+    @supports (background-size:contain) {
+        .site-mast-branding .site-logo {
+            background-image:url(//s0.meituan.com/bs/file/?f=fewww:www/css/i/mt-logo.2x.png);
+            background-position: 0 0;
+            background-size: contain;
+        }
+    }
+}
+.site-mast-site-nav-inner {
+    position: relative;
+    margin: 0 auto;
+    width: 1190px;
+    height: 40px;
+    font-size: 16px;
+    z-index: 40
+}
+
+.site-mast .navbar {
+    border-bottom: none;
+    height: 100%;
+    background: #2bb8aa;
+    overflow: hidden;
+}
+
+.navbar .current .navbar-item,.navbar-item:hover {
+    background: #00c3b0;
+    color: #fff;
+    text-decoration: none
+}
+
+.navbar-item-w {
+    float: left;
+    margin-left: -1px
+}
+
+.navbar-item {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;padding: 10px 18px 9px;
+    min-width: 54px;
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    -webkit-transition: background-color .15s linear;
+    -moz-transition: background-color .15s linear;
+    transition: background-color .15s linear
+}
+
+.navbar-item .nav-label {
+    vertical-align: text-bottom;
+    -webkit-font-smoothing: antialiased
+}
+
+.navbar .current .navbar-item:hover {
+    color: #fff
+}
+
+.navbar-item .icon-new {
+    top: -4px;
+    right: 10px
+}
+
+
+.site-info-w {
+    padding-bottom: 30px;
+    background: #f9f9f9;
+    clear: both
+}
+
+.site-outer {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd
+}
+.site-info {
+    border-top: 3px double #EEE;
+    margin: 0 auto;
+    font-size: 12px;
+    clear: both;
+    width: 1190px
+}
+.site-wrapper {
+  margin: 0 auto;
+  width: 1190px
+}
+@media screen and (max-width: 1200px) {
+    .site-info, .site-wrapper, .site-mast-branding, .site-mast-site-nav-inner {
+        width: 990px
+    }
+}
+
+.site-info-item {
+    float: left;
+    padding-top: 20px;
+    padding-bottom: 35px;
+    width: 18.5%;
+    height: 160px
+}
+
+.site-info-item h3 {
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #666;
+    padding-left: 10px
+}
+
+.site-info-item ul {
+    line-height: 1.8;
+    color: #666;
+    padding-left: 10px
+}
+
+.site-info-item li {
+    list-style: none
+}
+
+.site-info-item a {
+    color: #999;
+    font-size: 12px
+}
+
+.site-info-item .revEmail {
+    unicode-bidi: bidi-override;
+    direction: rtl
+}
+
+.site-info-item-service {
+    width: 26%;
+    font-family: "Hiragino Sans GB"," Microsoft YaHei","WenQuanYi Micro Hei",arial,sans-serif;
+    color: #666
+}
+
+.site-info-item-service .site-info-service-content {
+    padding-left: 12%;
+    border-left: 1px solid #eee
+}
+
+.site-info-item-service .site-info-service-content .hotline {
+    display: block;
+    background-position: 0 -80px;
+    width: 49px;
+    height: 45px
+}
+
+.site-info-item-service .site-info-service-content .contact-name {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px
+}
+
+.site-info-item-service .site-info-service-content .contact-info {
+    margin-bottom: 27px
+}
+
+.site-info-item-service .site-info-service-content .contact-info .contact-numbers {
+    font-size: 18px;
+    font-weight: 700;
+    color: #666
+}
+
+.site-info-item-service .site-info-service-content .contact-info .contact-time {
+    font-size: 12px;
+    color: #999
+}
+
+.site-info-item-service .site-info-service-content .selfservice-link {
+    color: #2bb8aa
+}
+
+.copyright,.copyright a {
+    color: #999
+}
+
+.copyright {
+    padding-top: 28px;
+    clear: both;
+    text-align: center;
+    font-size: 12px;
+    font-family: initial;
+    line-height: 12px
+}
+.site-mast-user-nav .growth-info-nav {
+    position: relative;
+    overflow: visible;
+    cursor: pointer
+}
+
+.site-mast-user-nav .growth-info-nav .level-icon {
+    position: relative;
+    top: -1px;
+    left: 0;
+    margin-left: 5px
+}
+
+.footer-sprite,.site-info-item-service .site-info-service-content .hotline,.sp-ft-12315,.sp-ft-alipay,.sp-ft-knet,.sp-ft-record,.sp-ft-tenpay {
+    background-image: url(//s0.meituan.com/bs/file/?f=fewww:www/css/si/footer.png);
+    background-repeat: no-repeat
+}
+
+.cert {
+    margin: 30px auto;
+    text-align: center
+}
+
+.cert-item {
+    display: inline-block;
+    *display: inline;
+    zoom:1;margin: 0;
+    height: 38px
+}
+
+.cert-item a {
+    display: block;
+    outline: 0;
+    height: 38px;
+    margin: 0
+}
+
+.sp-ft {
+    overflow: hidden;
+    text-indent: -1000px
+}
+
+.sp-ft-record {
+    width: 111px;
+    background-position: 0 -167px
+}
+
+.sp-ft-alipay {
+    width: 123px;
+    background-position: 0 0
+}
+
+.sp-ft-tenpay {
+    width: 83px;
+    background-position: 0 -207px
+}
+
+.sp-ft-knet {
+    width: 107px;
+    background-position: 0 -127px
+}
+
+.sp-ft-12315 {
+    width: 123px;
+    background-position: 0 -40px
+}
+
+.idinfo-zhejiang {
+    width: 37px
+}
+
+.idinfo-shanghai {
+    width: 40px
+}
+
+.idinfo-shandong {
+    width: 142px
+}
+
+.idinfo-chongqing {
+    width: 111px
+}
+
+.gongshang-logo-cq,.gongshang-logo-sd,.gongshang-logo-sh,.gongshang-logo-zj {
+    background-image: url(//s0.meituan.com/bs/file/?f=fewww:www/css/i/logo-license-zhejiang.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-indent: -1000px
+}
+
+.gongshang-logo-sh {
+    background-image: url(//s0.meituan.com/bs/file/?f=fewww:www/css/i/logo-license-shanghai.png)
+}
+
+.gongshang-logo-sd {
+    background-image: url(//s0.meituan.com/bs/file/?f=fewww:www/css/i/logo-license-shandong.png)
+}
+
+.gongshang-logo-cq {
+    background-image: url(//s0.meituan.com/bs/file/?f=fewww:www/css/i/logo-gongshang-chongqing.png)
+}
+
+.img-viewer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.7);
+    z-index: 99;
+}
+
+
+
+.buy-process-bar-container {
+    float: left;
+    position: relative;
+    margin: 36px 0 0 25px;
+    width: 800px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .buy-process-bar-container {
+        width: 500px;
+    }
+}
+
+.buy-process-desc {
+    width: 100%;
+    box-sizing: border-box;
+    background: 0 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.buy-process-desc .step {
+    position: relative;
+    display: inline-block;
+    width: 33.33%;
+    font-size: 12px;
+    color: #999;
+    line-height: 30px;
+    text-align: center;
+}
+
+.buy-process-desc .step--current {
+    color: #666;
+    background: 0 0
+}
+
+.progress {
+    height: 3px;
+    width: 100%;
+    padding: 1px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #eee;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1)
+}
+
+.progress .progress-bar {
+    width: 33%;
+    height: 100%;
+    background: #2bb8aa;
+    background-image: linear-gradient(-45deg,#2bb8aa 0,#2bb8aa 25%,#2bb8aa 25%,#2bb8aa 50%,#2bb8aa 50%,#2bb8aa 75%,#2bb8aa 75%,#2bb8aa 100%);
+    background-size: 40px 40px
+}
+
+input[type="checkbox"], input[type="radio"] {
+    -webkit-appearance:none;
+    -ms-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+
+input[type="radio"]:before {
+    transform: scale(0) !important;
+    transition: transform .25s !important;
+}
+
+input[type="radio"]:checked:before {
+    transform: scale(1) !important;
+}

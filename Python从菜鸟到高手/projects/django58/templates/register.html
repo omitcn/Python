@@ -1,0 +1,127 @@
+<!--
+--------《Python从菜鸟到高手》源代码------------
+
+欧瑞科技版权所有
+作者：李宁
+如有任何技术问题，请加QQ技术讨论群：264268059    
+或关注“极客起源”订阅号或“欧瑞科技”服务号或扫码关注订阅号和服务号，二维码在源代码根目录
+如果QQ群已满，请访问https://geekori.com，在右侧查看最新的QQ群，同时可以扫码关注公众号
+
+“欧瑞学院”是欧瑞科技旗下在线IT教育学院，包含大量IT前沿视频课程，
+请访问http://geekori.com/edu或关注前面提到的订阅号和服务号，进入移动版的欧瑞学院
+
+“极客题库”是欧瑞科技旗下在线题库，请扫描源代码根目录中的小程序码安装“极客题库”小程序
+
+关于更多信息，请访问下面的页面
+https://geekori.com/help/videocourse/readme.html
+
+
+
+-->
+{% extends "base.html" %}
+{% block title %}
+	用户注册
+{% endblock %}
+{% block mainbody %}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册会员-58同城</title>
+    <link rel="stylesheet" href="https://c.58cdn.com.cn/ppt/ui6/my/css/mobile_reg_v20171123144136.css"/>
+</head>
+<body>
+    <img src="//img.58cdn.com.cn/ui6/my/images/reg-bg.png" alt="" width="100%" height="100%" style="z-index:-1;position:fixed;_position:absolute;left:0;right:0;bottom:0;top:0;_left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));">
+    <div id="overlay"></div>
+    <div id="regContent">
+        <div id="outregBox">
+            <div id="backtoindex"><a href="/index">返回首页</a></div>
+            <div id="goLogin">已有账户？<a href="/login">去登录</a></div>
+        </div>
+        <div class="wrap">
+
+		<div id="regLogo" class="regLogo regLogo58"><a id="logoHref" href="index"></a></div>
+           <div id="regBox" class="regBox"><ul id="regUl" class="regUl">
+			    <!--username-->
+			    <input type="password" style="position:absolute, top:-999px"/>
+			    <li id="regMobileUsernameLi" class="regLi regMobileUsernameLi">
+			     	<span class="regLable">用户名</span>
+			    	<input type="text" placeholder="用户名" class="regMobileUsername regInput" maxlength="20" required="" autocomplete="off">
+				</li>
+			    <li id="regRepasswordTip" class="regRepasswordTip regRepasswordTipClear regTip">
+			        <span id="regUsernameTipText" class="regTipText"></span>
+			    </li>
+			    
+				
+			    <!--设置密码-->
+			    <li id="regPasswordLi" class="regLi">
+			        <span class="regLable">设置密码</span>
+			        <input type="password" placeholder="设置密码" class="regPassword regInput" maxlength="16" autocomplete="off">
+			    </li>
+
+			    <!--确认密码-->
+			    <li id="regRepasspordLi" class="regLi">
+			        <span class="regLable">确认密码</span>
+			        <input type="password" placeholder="确认密码" id="regRepasswordText" class="regRepassword regInput" maxlength="16" autocomplete="off">
+			    </li>
+			    <li id="regRepasswordTip" class="regRepasswordTip regRepasswordTipClear regTip">
+			        <span id="regRepasswordTipText" class="regTipText"></span>
+			    </li>
+
+			    <!--登录按钮-->
+			    <li id="regButtonLi" class="regButtonLi regLi">
+			        <div id="regAgreementBox">
+			            <input type="checkbox" checked="checked" id="regAgreementCheckbox">
+			                        <span>我已阅读并同意
+			                            <a id="regAgreement" target="_blank" href="http://about.58.com/home/announcement.html">《58同城使用协议》</a>
+			                        &amp; <a id="regAgreementPrivacy" target="_blank" href="http://about.58.com/395.html">《隐私权条款》</a></span>
+
+			        </div>
+			        <div class="regButtonBox">
+			            <input type="button" value="注册" id="regButton" class="regButton">
+			        </div>
+			    </li>
+
+			</ul>
+			</div>
+        </div>
+	    <div class="login-footer">
+	        <span id="footerTip" href="javascript:;">© 58.com</span><span>|</span><a href="http://about.58.com " target="_blank">联系客服</a><span>|</span><a href="//about.58.com/customerservice.html" target="_blank">帮助</a>
+	    </div>
+    </div>
+</body>
+</html>
+<script>
+    // 点击注册
+    $('#regButton').click(function(){
+        var username=$('.regMobileUsername').val();
+        var password=$('.regPassword').val();
+        var repassword=$('.regRepassword').val();
+        if(username.length==0){
+            $('#regUsernameTipText').text('请输入用户名');
+            return;
+        }
+        if(password != repassword || password.length==0){
+            $('#regRepasswordTipText').text('两次输入密码不一致');
+            return;
+        }
+        $.ajax({
+            url:"/register/",
+            data:{username:username,password:password},
+            dataType:"TEXT",
+            type:"POST",
+            success:function(data){
+                if(data=='isset'){
+                    $('#regUsernameTipText').text('用户名已存在');
+                }
+                if(data=='success'){
+                    alert('注册成功!')
+                    window.location.href="/index"
+                }
+            }
+        });
+    })
+
+</script>
+{% endblock %}

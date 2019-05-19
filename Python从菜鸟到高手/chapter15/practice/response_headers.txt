@@ -1,0 +1,4 @@
+HTTP/1.1 OK 
+Server:custom 
+Content-type:image/png 
+Content-length:%d

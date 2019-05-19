@@ -1,0 +1,910 @@
+<!--
+--------《Python从菜鸟到高手》源代码------------
+
+欧瑞科技版权所有
+作者：李宁
+如有任何技术问题，请加QQ技术讨论群：264268059    
+或关注“极客起源”订阅号或“欧瑞科技”服务号或扫码关注订阅号和服务号，二维码在源代码根目录
+如果QQ群已满，请访问https://geekori.com，在右侧查看最新的QQ群，同时可以扫码关注公众号
+
+“欧瑞学院”是欧瑞科技旗下在线IT教育学院，包含大量IT前沿视频课程，
+请访问http://geekori.com/edu或关注前面提到的订阅号和服务号，进入移动版的欧瑞学院
+
+“极客题库”是欧瑞科技旗下在线题库，请扫描源代码根目录中的小程序码安装“极客题库”小程序
+
+关于更多信息，请访问下面的页面
+https://geekori.com/help/videocourse/readme.html
+
+
+
+-->
+{% extends "base.html" %}
+{% block title %}
+	招聘类型
+{% endblock %}
+{% block mainbody %}
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="http://c.58cdn.com.cn/job/pc/full/cate/0.1/job1015.css?v=3"/>
+<link type="text/css" rel="stylesheet" href="http://c.58cdn.com.cn/ui7/css/easydialog.css"/>
+<link type="text/css" rel="stylesheet" href="http://c.58cdn.com.cn/componentsLoader/dist/CompontsLoader.css?20170111"/>
+</head>
+<body>
+<!-- topbar -->
+<div id="commonTopbar" class="commonTopbar">
+	<div class="bar_right" style="margin-right:10%;">
+		<div id="commonTopbar_login">
+			{% if username %}
+			欢迎您~ <font color="red">{{username}}</font>
+			<span class="gap">|</span>
+			<a href="/logout" target="_self">注销</a>
+			{% else %}
+			<a href="/login" target="_self">登录</a>
+			<span class="gap">|</span>
+			<a href="/register" target="_self">注册</a>
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+<!-- head start -->
+<div class="wb-head">
+	<div class="wb-header clearfix">
+		<div class="logo">
+			<a href="/index" target="_blank" title="到58同城首页">
+				<img alt="中文最大生活信息门户" src="http://img.58cdn.com.cn/job/pc/full/common/0.1/logo/logo-job@2x.png" style="width: 226px;" alt="中文最大生活信息门户" title="58同城，让生活更简单">
+			</a>			
+		</div>
+	</div>
+</div>
+<!-- head end -->
+<!-- main start -->
+<div class="wb-main">
+	<div class="wb-content">
+		<!-- fliter start -->
+		<div class="filter" id="filter">
+			<div class="tabs" tongji_id="ZP_job_index_div_navigation">
+				<div class="tabsbar">
+					<a href="/job.shtml" class="selCur" onClick="clickLog('from=zhaopin_index_tab_searchjob&city=sy');">找工作</a><a href="/jianzhi.shtml" target="_blank" onClick="clickLog('from=zhaopin_index_tab_searchjz&city=sy');">找兼职</a><a href="http://qy.58.com/famous/" target="_blank" onClick="clickLog('from=pinpairezhao&city=sy');">知名企业</a><a href="http://www.58.com/zp/" target="_blank" onClick="clickLog('from=zhaopin_index_tab_handbook&city=sy');">求职指南</a><a href="/searchjob.shtml" target="_blank" onClick="clickLog('from=zhaopin_index_tab_jobjl&city=sy');">全职简历</a><a href="/zhaojianzhi.shtml" target="_blank" onClick="clickLog('from=zhaopin_index_tab_jianzhijl&city=sy');">兼职简历</a><a href="http://cepingp.58.com" target="_blank" onClick="clickLog('from=pc-index-cepingtab&city=sy');">职业测评
+					<i class="hot"></i>
+					</a>
+				</div>
+			</div>
+			<div class="searInfo clearfix" tongji_id="ZP_job_index_div_sou">
+				<div class="selInfo clearfix" id="selInfo">
+
+					<div class="itemInfo hire_item"><!-- 显示行业类别弹出层时，添加样式zidx900 -->
+						<div class="itemT" id="urlb" default="请选择行业类别">
+							<span>请选择行业类别</span><b></b>
+						</div>
+					</div>					
+					<div class="searBar fl">
+						<div class="searInput">
+							<input para="key1" name="b_q1" onblur="win1.closeToolTipWindow();if(this.value==''){this.value='请输入职位名、公司名等关键字';this.className='keyword';}" id="keyword1" class="keyword" onfocus="if(this.value=='请输入职位名、公司名等关键字')this.value='';this.className='keyword2';" onkeyup="win1.GetContentData();" value="请输入职位名、公司名等关键字" autocomplete="on" fdv="请输入职位名、公司名等关键字" data-fdv="true">
+						</div>
+						<a href="#" class="searJob" id="searJob">
+							<strong>找工作</strong>
+						</a>
+					</div>					
+				</div>
+
+			</div>
+		</div>
+
+		<!-- hotposCate start-->
+		<div class="hotposCate bor clearfix" tongji_id="ZP_job_index_div_hotlist">
+			<div class="title">
+				<h2>沈阳招聘专区 | 热门职位</h2>
+			</div>
+			<div class="hotposCont">
+				<ul class="posList">
+					<!-- django 模版 for -->
+					{%for item in type%}
+						<li>
+							<a href="/recList?type={{item.id}}">{{item.name}}{% if item.hot %}<i class="hot"></i>{% endif %}</a>
+						</li>
+					{%endfor%}
+				</ul>
+			</div>
+		</div>
+		<div id="chinahr_job" class="hotposCate bor clearfix" style="display:block;">
+			<div class="title">
+				<h2>中华英才的热招职位</h2>
+			</div>
+			<div class="hotposCont">
+				<ul class="posList">
+					<li>
+		            	<a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=财务 审计&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">财务/审计</a>
+		            </li>
+		            <li>
+		            	<a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=行政管理&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank" target="_blank">行政管理</a>
+		            </li>
+		            <li>
+		            	<a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=设计&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">设计</a>
+		            </li>
+		            <li>
+		            	<a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=建筑 房产&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">建筑/房产</a>
+		            </li>
+		            <li>
+		            	<a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=生产制造&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">生产制造</a>
+		            </li>
+		            <li>
+		            	<a href="http://campus.chinahr.com/sx/?from=wbzp" target="_blank">实习生</a>
+		            	<!-- <a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=实习生&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">实习生</a> -->
+		            </li>
+		            <li>
+		            	<a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=销售经理&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">销售经理</a>
+		            </li>
+		            <li>
+		            	<a href="http://campus.chinahr.com/qz/?from=wbzp?pagesize=15&job_type=10&industry=1102" target="_blank">金融/银行</a>
+		            	<!-- <a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=金融银行 金融银行&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">金融/银行</a> -->
+		            </li>
+		            <li>
+		            	<a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=广告 策划&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">广告/策划</a>
+		            </li>
+		            
+		            <li>
+		            	<a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=公关 媒介&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">公关/媒介</a>
+		            </li>  
+		            <li>
+		            	<a href="http://campus.chinahr.com/qz/?from=wbzp" target="_blank">校招职位</a>
+		            	<!-- <a href="http://www.chinahr.com/sou?city={0}&orderField=relate&keyword=校招职位&utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">校招职位</a> -->
+		            </li>
+					<li>
+		            	<a href="http://www.chinahr.com/?utm_source=market&spm=b-32948702282246-pe-f-815.pc_58_58pc_zpindex" target="_blank">更多职位</a>
+		            </li>
+				</ul>
+			</div>
+		</div>
+		<!-- 广告位预留--> 
+		<div id="ad_z4"></div>
+		<div id="1042"></div>
+		<!-- 全部职位 start -->
+		<div class="allPos bor" tongji_id="ZP_job_index_div_alllist1">
+			<div class="title">
+				<h2>沈阳招聘全部职位</h2>
+			</div>
+			<div class="posCont clearfix" id="posCont">
+				<ul class="sidebar-left fl" id="sidebar-left">
+					<li class="curSel">
+						<a href="javascript:void(0)" class="nobor">生活 | 服务业</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">人力 | 行政 | 管理</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">销售 | 客服 | 采购 | 淘宝</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">酒店</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">市场 | 媒介 | 广告 | 设计</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">生产 | 物流 | 质控 | 汽车</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">网络 | 通信 | 电子</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">法律 | 教育 | 翻译 | 出版</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">财会 | 金融 | 保险</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">医疗 | 制药 | 环保</a>
+					</li>					
+					<li>
+						<a href="javascript:void(0)">建筑 | 装修 | 物业 | 其他</a>
+					</li>
+				</ul>
+				<div class="sidebar-right fl" id="sidebar-right">
+					<ul style="display: block;">
+						<li dsid="13915"><strong><a href="/zplvyoujiudian/" leibie="zplvyoujiudian">餐饮</a></strong>
+							<a href="/cantfwy/" leibie="cantfwy">服务员</a>
+							<a href="/songcanyuan/" leibie="songcanyuan">送餐员</a>
+							<a href="/canguan/" leibie="canguan">厨师/厨师长</a>
+							<a href="/houchuczg/" leibie="houchuczg">后厨</a>
+							<a href="/chuancaiyuan/" leibie="chuancaiyuan">传菜员</a>
+							<a href="/chufangqiepei/" leibie="chufangqiepei">配菜/打荷</a>
+							<a href="/xiwangong/" leibie="xiwangong">洗碗工</a>
+							<a href="/miandianshi/" leibie="miandianshi">面点师</a>
+							<a href="/chayi/" leibie="chayi">茶艺师</a>
+							<a href="/qiantjd/" leibie="qiantjd">迎宾/接待</a>
+							<a href="/datangjingli/" leibie="datangjingli">大堂经理/领班</a>
+							<a href="/jiudianjl/" leibie="jiudianjl">餐饮管理</a>
+							<a href="/zpxuetu/" leibie="zpxuetu">学徒</a>
+							<a href="/zpzagong/" leibie="zpzagong">杂工</a>
+							<a href="/zpkafei/" leibie="zpkafei">咖啡师</a>
+							<a href="/zpyudingyuan/" leibie="zpyudingyuan">预订员</a>
+						</li>
+						<li dsid="13931"><strong><a href="/jiazhengbaojiexin/" leibie="jiazhengbaojiexin">家政保洁/安保</a></strong>
+							<a href="/baojieyuan/" leibie="baojieyuan">保洁</a>
+							<a href="/baomuxin/" leibie="baomuxin">保姆</a>
+							<a href="/yuesaoyuying/" leibie="yuesaoyuying">月嫂</a>
+							<a href="/yuying/" leibie="yuying">育婴师/保育员</a>
+							<a href="/xiyifang/" leibie="xiyifang">洗衣工</a>
+							<a href="/zhdiang/" leibie="zhdiang">钟点工</a>
+							<a href="/baoanl/" leibie="baoanl">保安</a>
+							<a href="/hugong/" leibie="hugong">护工</a>
+							<a href="/songshuigong/" leibie="songshuigong">送水工</a>
+						</li>
+						<li dsid="13933"><strong><a href="/meirongjianshen/" leibie="meirongjianshen">美容/美发</a></strong>
+							<a href="/faxingshi/" leibie="faxingshi">发型师</a>
+							<a href="/meifaxuetu/" leibie="meifaxuetu">美发助理/学徒</a>
+							<a href="/xitougong/" leibie="xitougong">洗头工</a>
+							<a href="/zpmeirongdaoshi/" leibie="zpmeirongdaoshi">美容导师</a>
+							<a href="/meirongshi/" leibie="meirongshi">美容师</a>
+							<a href="/meirongzhuli/" leibie="meirongzhuli">美容助理/学徒</a>
+							<a href="/huazhuangshizg/" leibie="huazhuangshizg">化妆师</a>
+							<a href="/meitishi/" leibie="meitishi">美甲师</a>
+							<a href="/chongwumr/" leibie="chongwumr">宠物美容</a>
+							<a href="/meifadianz/" leibie="meifadianz">美容店长</a>
+							<a href="/meirongguwen/" leibie="meirongguwen">美容/瘦身顾问</a>
+							<a href="/caizhuangpeixun/" leibie="caizhuangpeixun">彩妆培训师</a>
+							<a href="/zpmeitishi/" leibie="zpmeitishi">美体师</a>
+						</li>
+						<li dsid="38674"><strong><a href="/zpjiudian/" leibie="zpjiudian">旅游</a></strong>
+							<a href="/zpdingpiao/" leibie="zpdingpiao">订票员</a>
+							<a href="/dyao/" leibie="dyao">导游</a>
+							<a href="/zpjidiao/" leibie="zpjidiao">计调</a>
+							<a href="/qianzheng/" leibie="qianzheng">签证专员</a>
+							<a href="/lvyouguwen/" leibie="lvyouguwen">旅游顾问</a>
+						</li>
+						<li dsid="13924"><strong><a href="/zpwentiyingshi/" leibie="zpwentiyingshi">娱乐/休闲</a></strong>
+							<a href="/jiubagzy/" leibie="jiubagzy">酒吧服务员</a>
+							<a href="/yulefwy/" leibie="yulefwy">娱乐厅服务员</a>
+							<a href="/wtliyi/" leibie="wtliyi">礼仪/迎宾</a>
+							<a href="/wtzhuchiren/" leibie="wtzhuchiren">主持人</a>
+							<a href="/tiaojiushi/" leibie="tiaojiushi">调酒师</a>
+							<a href="/wtluying/" leibie="wtluying">音效师</a>
+							<a href="/dengguangshi/" leibie="dengguangshi">灯光师</a>
+							<a href="/wtxieying/" leibie="wtxieying">摄影师/摄像师</a>
+							<a href="/yingshicehua/" leibie="yingshicehua">影视/后期制作</a>
+							<a href="/peiyin/" leibie="peiyin">配音员</a>
+							<a href="/fangyingyuan/" leibie="fangyingyuan">放映员</a>
+						</li>
+						<li dsid="38679"><strong><a href="/zpanmo/" leibie="zpanmo">保健按摩</a></strong>
+							<a href="/zhenjiuzg/" leibie="zhenjiuzg">按摩师</a>
+							<a href="/baojiananmozuliao/" leibie="baojiananmozuliao">足疗师</a>
+							<a href="/zpcuozao/" leibie="zpcuozao">搓澡工</a>
+							<a href="/zptuina/" leibie="zptuina">针灸推拿</a>
+						</li>
+						<li dsid="38680"><strong><a href="/zpjianshen/" leibie="zpjianshen">运动健身</a></strong>
+							<a href="/jianshenguwen/" leibie="jianshenguwen">健身教练</a>
+							<a href="/yujiawudaolaoshi/" leibie="yujiawudaolaoshi">瑜伽教练</a>
+							<a href="/zpwudao/" leibie="zpwudao">舞蹈老师</a>
+							<a href="/zpyouyong/" leibie="zpyouyong">游泳教练</a>
+							<a href="/zptaiqiu/" leibie="zptaiqiu">台球教练</a>
+							<a href="/zpgaoerfu/" leibie="zpgaoerfu">高尔夫球助理</a>
+						</li>
+					</ul>
+					<ul style="display: none;">
+						<li dsid="13906"><strong><a href="/renli/" leibie="renli">人事/行政/后勤</a></strong>
+							<a href="/wenziluru/" leibie="wenziluru">文员</a>
+							<a href="/qiantai/" leibie="qiantai">前台/总机/接待</a>
+							<a href="/zhaopinjingli/" leibie="zhaopinjingli">人事专员/助理</a>
+							<a href="/renshizhuguan/" leibie="renshizhuguan">人事经理/主管</a>
+							<a href="/renshizongjian/" leibie="renshizongjian">人事总监</a>
+							<a href="/xingzhengzhuanyuan/" leibie="xingzhengzhuanyuan">行政专员/助理</a>
+							<a href="/xingzhengjingli/" leibie="xingzhengjingli">行政经理/主管</a>
+							<a href="/xingzhengzongjian/" leibie="xingzhengzongjian">行政总监</a>
+							<a href="/mishu/" leibie="mishu">经理助理/秘书</a>
+							<a href="/xinzifuli/" leibie="xinzifuli">薪酬/绩效/员工关系</a>
+							<a href="/lietouguwen/" leibie="lietouguwen">猎头顾问</a>
+							<a href="/houqin/" leibie="houqin">后勤</a>
+							<a href="/peixunzhuanyuan/" leibie="peixunzhuanyuan">培训专员/助理</a>
+							<a href="/peixunjingli/" leibie="peixunjingli">培训经理/主管</a>
+							<a href="/zhaopinzhuanyuan/" leibie="zhaopinzhuanyuan">招聘专员/助理</a>
+							<a href="/zhaopinzhuguan/" leibie="zhaopinzhuguan">招聘经理/主管</a>
+						</li>
+						<li dsid="13928"><strong><a href="/siji/" leibie="siji">司机</a></strong>
+							<a href="/shangwujiaochesiji/" leibie="shangwujiaochesiji">商务司机</a>
+							<a href="/changtukeyuansiji/" leibie="changtukeyuansiji">客运司机</a>
+							<a href="/sonhuosiji/" leibie="sonhuosiji">货运司机</a>
+							<a href="/chuzuchesiji/" leibie="chuzuchesiji">出租车司机</a>
+							<a href="/gongjiaobanchesiji/" leibie="gongjiaobanchesiji">班车司机</a>
+							<a href="/tezhongchesiji/" leibie="tezhongchesiji">特种车司机</a>
+							<a href="/jiaoxiaojiaolian/" leibie="jiaoxiaojiaolian">驾校教练/陪练</a>
+						</li>
+						<li dsid="13893"><strong><a href="/zpguanli/" leibie="zpguanli">高级管理</a></strong>
+							<a href="/zpzongcai/" leibie="zpzongcai">CEO/总裁/总经理</a>
+							<a href="/shouxiyunying/" leibie="shouxiyunying">首席运营官COO</a>
+							<a href="/shouxicaiwu/" leibie="shouxicaiwu">首席财务官CFO</a>
+							<a href="/shouxijishu/" leibie="shouxijishu">首席技术官CTO</a>
+							<a href="/fuzongcai/" leibie="fuzongcai">副总裁/副总经理</a>
+							<a href="/zongcaizhuli/" leibie="zongcaizhuli">总裁助理/总经理助理</a>
+							<a href="/zongjian/" leibie="zongjian">总监</a>
+							<a href="/fengongsijingli/" leibie="fengongsijingli">分公司经理</a>
+							<a href="/hehuoren/" leibie="hehuoren">合伙人</a>
+						</li>
+					</ul>
+					<ul style="display: none;">
+						<li dsid="13901"><strong><a href="/yewu/" leibie="yewu">销售</a></strong>
+							<a href="/xiaoshouyuan/" leibie="xiaoshouyuan">销售代表</a>
+							<a href="/xiaoshouzhuli/" leibie="xiaoshouzhuli">销售助理</a>
+							<a href="/xiaoshoujingli/" leibie="xiaoshoujingli">销售经理/主管</a>
+							<a href="/xiaoshouzongjian/" leibie="xiaoshouzongjian">销售总监</a>
+							<a href="/dianhuaxiaoshou/" leibie="dianhuaxiaoshou">电话销售</a>
+							<a href="/xiaoshougongchengshi/" leibie="xiaoshougongchengshi">销售支持</a>
+							<a href="/qichexiaoshou/" leibie="qichexiaoshou">汽车销售</a>
+							<a href="/yiyaodaibiao/" leibie="yiyaodaibiao">医药代表</a>
+							<a href="/yiliaoqixie/" leibie="yiliaoqixie">医疗器械销售</a>
+							<a href="/wangluoxiaoshouyuan/" leibie="wangluoxiaoshouyuan">网络销售</a>
+							<a href="/quyuxiaoshou/" leibie="quyuxiaoshou">区域销售</a>
+							<a href="/qudaorenyuan/" leibie="qudaorenyuan">渠道专员</a>
+							<a href="/qudaojingli/" leibie="qudaojingli">渠道经理/总监</a>
+							<a href="/kehujingli/" leibie="kehujingli">客户经理/主管</a>
+							<a href="/dakehujingli/" leibie="dakehujingli">大客户经理</a>
+							<a href="/tuangouxiaoshou/" leibie="tuangouxiaoshou">团购业务员/经理</a>
+							<a href="/huijiguwen/" leibie="huijiguwen">会籍顾问</a>
+						</li>
+						<li dsid="13902"><strong><a href="/kefu/" leibie="kefu">客服</a></strong>
+							<a href="/kefuzhuanyuan/" leibie="kefuzhuanyuan">客服专员/助理</a>
+							<a href="/kefujingli/" leibie="kefujingli">客服经理/主管</a>
+							<a href="/kefuzongjian/" leibie="kefuzongjian">客服总监</a>
+							<a href="/shouhoufuwu/" leibie="shouhoufuwu">售前/售后服务</a>
+							<a href="/kehuzixun/" leibie="kehuzixun">电话客服</a>
+							<a href="/kehuguanxi/" leibie="kehuguanxi">客户关系管理</a>
+						</li>
+						<li dsid="13912"><strong><a href="/zpshangwumaoyi/" leibie="zpshangwumaoyi">贸易/采购</a></strong>
+							<a href="/waimaozhuanyuan/" leibie="waimaozhuanyuan">外贸专员/助理</a>
+							<a href="/waimaojingli/" leibie="waimaojingli">外贸经理/主管</a>
+							<a href="/caigouyuan/" leibie="caigouyuan">采购员</a>
+							<a href="/caigouzhuli/" leibie="caigouzhuli">采购助理</a>
+							<a href="/caigouguanli/" leibie="caigouguanli">采购经理/总监</a>
+							<a href="/danzhengbaoguan/" leibie="danzhengbaoguan">报关员</a>
+							<a href="/shangwuzhuanyuan/" leibie="shangwuzhuanyuan">商务专员/经理</a>
+							<a href="/maishou/" leibie="maishou">买手</a>
+						</li>
+						<li dsid="13802"><strong><a href="/chaoshishangye/" leibie="chaoshishangye">超市/百货/零售</a></strong>
+							<a href="/yingyeyuan/" leibie="yingyeyuan">店员/营业员</a>
+							<a href="/shouying/" leibie="shouying">收银员</a>
+							<a href="/cuxiao/" leibie="cuxiao">促销/导购员</a>
+							<a href="/lihuoyuan/" leibie="lihuoyuan">理货员/陈列员</a>
+							<a href="/fangsunyuan/" leibie="fangsunyuan">防损员/内保</a>
+							<a href="/dianzhang/" leibie="dianzhang">店长/卖场经理</a>
+							<a href="/zhaoshangjingli/" leibie="zhaoshangjingli">招商经理/主管</a>
+							<a href="/shechipinyewu/" leibie="shechipinyewu">奢侈品业务</a>
+							<a href="/pinleiguanli/" leibie="pinleiguanli">品类管理</a>
+							<a href="/shipinjiagong/" leibie="shipinjiagong">食品加工/处理</a>
+							<a href="/zpdudao/" leibie="zpdudao">督导</a>
+						</li>
+						<li dsid="38658"><strong><a href="/zptaobao/" leibie="zptaobao">淘宝职位</a></strong>
+							<a href="/zptaobaodianzhang/" leibie="zptaobaodianzhang">网店店长</a>
+							<a href="/zptaobaokefu/" leibie="zptaobaokefu">淘宝客服</a>
+							<a href="/zptaobaomeigong/" leibie="zptaobaomeigong">淘宝美工</a>
+							<a href="/zptaobaobianji/" leibie="zptaobaobianji">店铺文案编辑</a>
+							<a href="/zptaobaotuiguang/" leibie="zptaobaotuiguang">店铺推广</a>
+							<a href="/zptaobaocehua/" leibie="zptaobaocehua">活动策划</a>
+						</li>
+						<li dsid="38673"><strong><a href="/zpfangchan/" leibie="zpfangchan">房产中介</a></strong>
+							<a href="/fangdichan/" leibie="fangdichan">房产经纪人</a>
+							<a href="/zpzhiye/" leibie="zpzhiye">置业顾问</a>
+							<a href="/zpfangchandianzhang/" leibie="zpfangchandianzhang">房产店长/经理</a>
+							<a href="/zpfangchandianyuan/" leibie="zpfangchandianyuan">房产店员/助理</a>
+							<a href="/zpfangchankefu/" leibie="zpfangchankefu">房产客服</a>
+							<a href="/zpfangchanneiqin/" leibie="zpfangchanneiqin">房产内勤</a>
+							<a href="/zpfangchanpinggu/" leibie="zpfangchanpinggu">房产评估师</a>
+							<a href="/fangdichankaifa/" leibie="fangdichankaifa">房产开发/策划</a>
+							<a href="/zpfangchanqita/" leibie="zpfangchanqita">其他房产职位</a>
+						</li>
+					</ul>
+					<ul style="display: none;">
+						<li dsid="391097"><strong><a href="/jiudianzp/" leibie="jiudianzp">酒店</a></strong>
+							<a href="/loucjl/" leibie="loucjl">楼层经理</a>
+							<a href="/xiyifjl/" leibie="xiyifjl">洗衣房经理</a>
+							<a href="/ggqyjl/" leibie="ggqyjl">公共区域经理</a>
+							<a href="/keffwy/" leibie="keffwy">客房服务员</a>
+							<a href="/fwbzj/" leibie="fwbzj">房务部总监</a>
+							<a href="/kfbjl/" leibie="kfbjl">客房部经理</a>
+							<a href="/ydjl/" leibie="ydjl">预订经理</a>
+							<a href="/yudingy/" leibie="yudingy">预订员</a>
+							<a href="/zjjl/" leibie="zjjl">总机经理</a>
+							<a href="/zjyg/" leibie="zjyg">总机员工</a>
+							<a href="/qtbjl/" leibie="qtbjl">前厅部经理</a>
+							<a href="/qtzg/" leibie="qtzg">前台主管</a>
+							<a href="/lbjl/" leibie="lbjl">礼宾经理</a>
+							<a href="/bkgxzr/" leibie="bkgxzr">宾客关系主任</a>
+							<a href="/qtbyg/" leibie="qtbyg">前厅部员工</a>
+							<a href="/dtfl/" leibie="dtfl">大堂副理</a>
+							<a href="/zbjl/" leibie="zbjl">值班经理</a>
+							<a href="/qtjd/" leibie="qtjd">前台/接待</a>
+							<a href="/jiusy/" leibie="jiusy">救生员</a>
+							<a href="/zongjl/" leibie="zongjl">总经理</a>
+							<a href="/zjlzl/" leibie="zjlzl">总经理助理</a>
+							<a href="/jddzh/" leibie="jddzh">酒店店长</a>
+						</li>
+					</ul>
+					<ul style="display: none;">
+						<li dsid="13905"><strong><a href="/shichang/" leibie="shichang">市场/媒介/公关</a></strong>
+							<a href="/yingxiaozhuanyuan/" leibie="yingxiaozhuanyuan">市场专员/助理</a>
+							<a href="/shichangzongjian/" leibie="shichangzongjian">市场经理/总监</a>
+							<a href="/shichangzhuanyuan/" leibie="shichangzhuanyuan">市场拓展</a>
+							<a href="/shichangdiaoyan/" leibie="shichangdiaoyan">市场调研</a>
+							<a href="/qihua/" leibie="qihua">市场策划</a>
+							<a href="/shichangcehuagongguanmeijie/" leibie="shichangcehuagongguanmeijie">媒介专员/助理</a>
+							<a href="/meijiejingli/" leibie="meijiejingli">媒介经理/主管</a>
+							<a href="/huiwujingli/" leibie="huiwujingli">会务会展专员/经理</a>
+							<a href="/pinpaijingli/" leibie="pinpaijingli">品牌专员/经理</a>
+							<a href="/gongguanzhuanyuan/" leibie="gongguanzhuanyuan">公关专员/助理</a>
+							<a href="/gongguanjingli/" leibie="gongguanjingli">公关经理/主管</a>
+							<a href="/qihuajingli/" leibie="qihuajingli">企划经理/主管</a>
+						</li>
+						<li dsid="13918"><strong><a href="/zpguanggao/" leibie="zpguanggao">广告/会展/咨询</a></strong>
+							<a href="/wenan/" leibie="wenan">广告文案</a>
+							<a href="/chuangyizongjian/" leibie="chuangyizongjian">创意指导/总监</a>
+							<a href="/fengmiansj/" leibie="fengmiansj">广告设计/制作</a>
+							<a href="/shejichuangyi/" leibie="shejichuangyi">广告创意</a>
+							<a href="/zpmeijiecehua/" leibie="zpmeijiecehua">媒介策划/管理</a>
+							<a href="/huizhancehua/" leibie="huizhancehua">会展策划/设计</a>
+							<a href="/zphunlicehua/" leibie="zphunlicehua">婚礼策划师</a>
+							<a href="/zixunshi/" leibie="zixunshi">咨询顾问</a>
+							<a href="/zixunjingli/" leibie="zixunjingli">咨询经理/主管</a>
+							<a href="/zpkehuzhuguan/" leibie="zpkehuzhuguan">客户主管/专员</a>
+							<a href="/zpqiyecehua/" leibie="zpqiyecehua">企业策划</a>
+						</li>
+						<li dsid="38676"><strong><a href="/zpmeishu/" leibie="zpmeishu">美术/设计/创意</a></strong>
+							<a href="/meibian/" leibie="meibian">美编/美术设计</a>
+							<a href="/fuzhuangsj/" leibie="fuzhuangsj">服装设计</a>
+							<a href="/jiajusj/" leibie="jiajusj">家具/家居用品设计</a>
+							<a href="/sheji/" leibie="sheji">平面设计</a>
+							<a href="/meishuzhidao/" leibie="meishuzhidao">美术指导</a>
+							<a href="/zhanshizhuanghuang/" leibie="zhanshizhuanghuang">店面/陈列/展览设计</a>
+							<a href="/gongyisheji/" leibie="gongyisheji">工艺/珠宝设计</a>
+							<a href="/duomeiti/" leibie="duomeiti">多媒体/动画设计</a>
+							<a href="/baozhuangsheji/" leibie="baozhuangsheji">产品/包装设计</a>
+							<a href="/shineisheji/" leibie="shineisheji">装修装潢设计</a>
+							<a href="/shejizhitu/" leibie="shejizhitu">CAD设计/制图</a>
+						</li>
+					</ul>
+					<ul style="display: none;">
+						<li dsid="13916"><strong><a href="/zpshengchankaifa/" leibie="zpshengchankaifa">普工/技工</a></strong>
+							<a href="/pugong/" leibie="pugong">普工</a>
+							<a href="/weixiugongchengshi/" leibie="weixiugongchengshi">综合维修工</a>
+							<a href="/nuantonggong/" leibie="nuantonggong">制冷/水暖工</a>
+							<a href="/dianzi/" leibie="dianzi">电工</a>
+							<a href="/mugong/" leibie="mugong">木工</a>
+							<a href="/qiangong/" leibie="qiangong">钳工</a>
+							<a href="/maohangong/" leibie="maohangong">切割/焊工</a>
+							<a href="/banjin/" leibie="banjin">钣金工</a>
+							<a href="/youqigong/" leibie="youqigong">油漆工</a>
+							<a href="/fengrengong/" leibie="fengrengong">缝纫工</a>
+							<a href="/gulugong/" leibie="gulugong">锅炉工</a>
+							<a href="/shukongjichuang/" leibie="shukongjichuang">车工/铣工</a>
+							<a href="/chachegong/" leibie="chachegong">铲车/叉车工</a>
+							<a href="/mojugong/" leibie="mojugong">铸造/注塑/模具工</a>
+							<a href="/ditigong/" leibie="ditigong">电梯工</a>
+							<a href="/zhizaogongchengshi/" leibie="zhizaogongchengshi">操作工</a>
+							<a href="/baozhuanggcs/" leibie="baozhuanggcs">包装工</a>
+							<a href="/shoujiwx/" leibie="shoujiwx">手机维修</a>
+							<a href="/zpshuini/" leibie="zpshuini">水泥工</a>
+							<a href="/zpgangjin/" leibie="zpgangjin">钢筋工</a>
+							<a href="/zpguangdao/" leibie="zpguangdao">管道工</a>
+							<a href="/zpwagong/" leibie="zpwagong">瓦工</a>
+							<a href="/zpzuzhuang/" leibie="zpzuzhuang">组装工</a>
+							<a href="/zpyangyigong/" leibie="zpyangyigong">样衣工</a>
+							<a href="/zprangong/" leibie="zprangong">染工</a>
+							<a href="/zpfangzhi/" leibie="zpfangzhi">纺织工</a>
+							<a href="/zpyinhua/" leibie="zpyinhua">印花工</a>
+							<a href="/zpyayun/" leibie="zpyayun">压熨工</a>
+						</li>
+						<li dsid="38675"><strong><a href="/zpshengchan/" leibie="zpshengchan">生产管理/研发</a></strong>
+							<a href="/zhiliangbaozhengqa/" leibie="zhiliangbaozhengqa">质量管理</a>
+							<a href="/zonggongchengshi/" leibie="zonggongchengshi">总工程师/副总工程师</a>
+							<a href="/gcsbguanli/" leibie="gcsbguanli">设备管理维护</a>
+							<a href="/jsgysheji/" leibie="jsgysheji">工艺设计</a>
+							<a href="/shengchanjingli/" leibie="shengchanjingli">车间主任</a>
+							<a href="/jihuatiaodu/" leibie="jihuatiaodu">生产计划</a>
+							<a href="/huayan/" leibie="huayan">化验/检验</a>
+							<a href="/changzhang/" leibie="changzhang">厂长/副厂长</a>
+							<a href="/shengchanzongjian/" leibie="shengchanzongjian">生产总监</a>
+							<a href="/weixiugong/" leibie="weixiugong">维修工程师</a>
+							<a href="/gongyegcs/" leibie="gongyegcs">工业工程师</a>
+							<a href="/cailiaogcs/" leibie="cailiaogcs">材料工程师</a>
+							<a href="/jishugongcheng/" leibie="jishugongcheng">技术工程师</a>
+							<a href="/shengchanzhuguan/" leibie="shengchanzhuguan">生产主管/组长</a>
+						</li>
+						<li dsid="13913"><strong><a href="/zpwuliucangchu/" leibie="zpwuliucangchu">物流/仓储</a></strong>
+							<a href="/maoyi/" leibie="maoyi">物流专员/助理</a>
+							<a href="/wuliujingli/" leibie="wuliujingli">物流经理/主管</a>
+							<a href="/wuliuzongjian/" leibie="wuliuzongjian">物流总监</a>
+							<a href="/diaodu/" leibie="diaodu">调度员</a>
+							<a href="/sudiyuan/" leibie="sudiyuan">快递员</a>
+							<a href="/cangku/" leibie="cangku">仓库管理员</a>
+							<a href="/cangkujingli/" leibie="cangkujingli">仓库经理/主管</a>
+							<a href="/banyungong/" leibie="banyungong">装卸/搬运工</a>
+							<a href="/gongyinglianguanli/" leibie="gongyinglianguanli">供应链管理</a>
+							<a href="/danzhengyuan/" leibie="danzhengyuan">单证员</a>
+							<a href="/guojihuoyun/" leibie="guojihuoyun">国际货运</a>
+						</li>
+						<li dsid="24580"><strong><a href="/xiaofeipin/" leibie="xiaofeipin">服装/纺织/食品</a></strong>
+							<a href="/fuzhuangsheji/" leibie="fuzhuangsheji">服装设计师</a>
+							<a href="/fangzhisheji/" leibie="fangzhisheji">纺织品设计师</a>
+							<a href="/fuzhuangdayang/" leibie="fuzhuangdayang">服装打样/制版</a>
+							<a href="/shengchanguanli/" leibie="shengchanguanli">生产管理</a>
+							<a href="/yangyigong/" leibie="yangyigong">样衣工</a>
+							<a href="/shipinyanfa/" leibie="shipinyanfa">食品/饮料研发/检验</a>
+							<a href="/chugeshi/" leibie="chugeshi">板房/底格出格师</a>
+							<a href="/fangmayuan/" leibie="fangmayuan">电脑放码员</a>
+							<a href="/zhiyangshi/" leibie="zhiyangshi">纸样师/车板工</a>
+						</li>
+						<li dsid="24570"><strong><a href="/zhikonganfang/" leibie="zhikonganfang">质控/安防</a></strong>
+							<a href="/zhiliangguanli/" leibie="zhiliangguanli">质量管理/测试经理</a>
+							<a href="/zhijianyuan/" leibie="zhijianyuan">质量检验员/测试员</a>
+							<a href="/ceshigongchengshi/" leibie="ceshigongchengshi">测试工程师</a>
+							<a href="/anquanxiaofang/" leibie="anquanxiaofang">安全消防</a>
+							<a href="/renzhengyuan/" leibie="renzhengyuan">认证工程师/审核员</a>
+							<a href="/anquanguanli/" leibie="anquanguanli">安全管理</a>
+						</li>
+						<li dsid="13923"><strong><a href="/zpqiche/" leibie="zpqiche">汽车制造/服务</a></strong>
+							<a href="/qichesheji/" leibie="qichesheji">汽车设计工程师</a>
+							<a href="/zhuangpeigongyi/" leibie="zhuangpeigongyi">装配工艺工程师</a>
+							<a href="/qichewx/" leibie="qichewx">汽车/摩托车修理</a>
+							<a href="/qichejixie/" leibie="qichejixie">汽车机械工程师</a>
+							<a href="/qichedianzi/" leibie="qichedianzi">汽车电子工程师</a>
+							<a href="/qcfsweixiu/" leibie="qcfsweixiu">4S店管理</a>
+							<a href="/jianyanjiance/" leibie="jianyanjiance">汽车检验/检测</a>
+							<a href="/qichemeirong/" leibie="qichemeirong">汽车美容</a>
+							<a href="/qcpinggushi/" leibie="qcpinggushi">二手车评估师</a>
+							<a href="/qczozhuang/" leibie="qczozhuang">发动机/总装工程师</a>
+							<a href="/qcanquanxingneng/" leibie="qcanquanxingneng">安全性能工程师</a>
+							<a href="/qclipei/" leibie="qclipei">理赔专员/顾问</a>
+							<a href="/xicheyuan/" leibie="xicheyuan">洗车工</a>
+							<a href="/tingcheguanli/" leibie="tingcheguanli">停车管理员</a>
+							<a href="/jiayougong/" leibie="jiayougong">加油站工作员</a>
+							<a href="/luntaigong/" leibie="luntaigong">轮胎工</a>
+						</li>
+					</ul>
+					<ul style="display: none;">
+						<li dsid="13909"><strong><a href="/tech/" leibie="tech">计算机/互联网/通信</a></strong>
+							<a href="/jishuzongjian/" leibie="jishuzongjian">技术总监/经理</a>
+							<a href="/jishuzhichi/" leibie="jishuzhichi">技术支持/维护</a>
+							<a href="/jszhuanyuan/" leibie="jszhuanyuan">技术专员/助理</a>
+							<a href="/ruanjiangong/" leibie="ruanjiangong">软件工程师</a>
+							<a href="/chengxuyuan/" leibie="chengxuyuan">程序员</a>
+							<a href="/yingjiangong/" leibie="yingjiangong">硬件工程师</a>
+							<a href="/zhilianggongcheng/" leibie="zhilianggongcheng">质量工程师</a>
+							<a href="/yingjiancs/" leibie="yingjiancs">测试工程师</a>
+							<a href="/xitongjichengfenxi/" leibie="xitongjichengfenxi">系统架构师</a>
+							<a href="/shujukukaifa/" leibie="shujukukaifa">数据库管理/DBA</a>
+							<a href="/youxisheji/" leibie="youxisheji">游戏设计/开发</a>
+							<a href="/wangzhanmeigong/" leibie="wangzhanmeigong">网页设计/制作</a>
+							<a href="/cadsheji/" leibie="cadsheji">语音/视频/图形</a>
+							<a href="/xiangmuzongjian/" leibie="xiangmuzongjian">项目经理/主管</a>
+							<a href="/wangzhanchanpin/" leibie="wangzhanchanpin">产品经理/专员</a>
+							<a href="/wangzhanyunying/" leibie="wangzhanyunying">网站运营</a>
+							<a href="/wangzhanyingyun/" leibie="wangzhanyingyun">网站编辑</a>
+							<a href="/wangzhancehua/" leibie="wangzhancehua">网站策划</a>
+							<a href="/wangluogongchengshi/" leibie="wangluogongchengshi">网络管理员</a>
+							<a href="/wangluoanquan/" leibie="wangluoanquan">网络与信息安全工程师</a>
+							<a href="/ruanjianshishi/" leibie="ruanjianshishi">实施工程师</a>
+							<a href="/tongxinwuxian/" leibie="tongxinwuxian">通信技术工程师</a>
+						</li>
+						<li dsid="13922"><strong><a href="/zpjixieyiqi/" leibie="zpjixieyiqi">电子/电气</a></strong>
+							<a href="/zidonghua/" leibie="zidonghua">自动化工程师</a>
+							<a href="/dianzidianqigcs/" leibie="dianzidianqigcs">电子/电气工程师</a>
+							<a href="/didianqigongchengshi/" leibie="didianqigongchengshi">电路工程师/技术员</a>
+							<a href="/wuxiandiangcs/" leibie="wuxiandiangcs">无线电工程师</a>
+							<a href="/ceshigcs/" leibie="ceshigcs">测试/可靠性工程师</a>
+							<a href="/gongyigcs/" leibie="gongyigcs">产品工艺/规划工程师</a>
+							<a href="/yinpinshipingcs/" leibie="yinpinshipingcs">音频/视频工程师</a>
+							<a href="/zhaomingsheji/" leibie="zhaomingsheji">灯光/照明设计工程师</a>
+							<a href="/yanfagcs/" leibie="yanfagcs">研发工程师</a>
+							<a href="/dianzidianqiwx/" leibie="dianzidianqiwx">电子/电器维修</a>
+						</li>
+						<li dsid="38678"><strong><a href="/zpjixie/" leibie="zpjixie">机械/仪器仪表</a></strong>
+							<a href="/jxjixiegongchengshi/" leibie="jxjixiegongchengshi">机电工程师</a>
+							<a href="/zpjixiegongcheng/" leibie="zpjixiegongcheng">机械工程师</a>
+							<a href="/zpyanfa/" leibie="zpyanfa">研发工程师</a>
+							<a href="/zpceshi/" leibie="zpceshi">测试/可靠性工程师</a>
+							<a href="/bantushejigcs/" leibie="bantushejigcs">版图设计工程师</a>
+							<a href="/jxyiqigongcheng/" leibie="jxyiqigongcheng">仪器/仪表/计量</a>
+						</li>
+					</ul>
+					<ul style="display: none;">
+						<li dsid="13908"><strong><a href="/zpfalvzixun/" leibie="zpfalvzixun">法律</a></strong>
+							<a href="/lvshizhaopin/" leibie="lvshizhaopin">律师/法律顾问</a>
+							<a href="/lvshizhuli/" leibie="lvshizhuli">律师助理</a>
+							<a href="/lfawurenyuan/" leibie="lfawurenyuan">法务专员/主管</a>
+							<a href="/zhuanliguwen/" leibie="zhuanliguwen">产权/专利顾问</a>
+							<a href="/heguiguanli/" leibie="heguiguanli">合规管理</a>
+						</li>
+						<li dsid="13926"><strong><a href="/zhuanye/" leibie="zhuanye">教育培训</a></strong>
+							<a href="/jiaoshi/" leibie="jiaoshi">教师/助教</a>
+							<a href="/jiajiaolaoshi/" leibie="jiajiaolaoshi">家教</a>
+							<a href="/youerjiaoshi/" leibie="youerjiaoshi">幼教/早教</a>
+							<a href="/jypeixunshi/" leibie="jypeixunshi">培训师/讲师</a>
+							<a href="/peixuncehua/" leibie="peixuncehua">培训策划</a>
+							<a href="/peixunzhuli/" leibie="peixunzhuli">培训助理</a>
+							<a href="/jiaowu/" leibie="jiaowu">教学/教务管理</a>
+							<a href="/jiaoyukaifa/" leibie="jiaoyukaifa">教育产品开发</a>
+							<a href="/jykeyuanrenyuan/" leibie="jykeyuanrenyuan">学术研究/科研</a>
+							<a href="/jyzhaosheng/" leibie="jyzhaosheng">招生/课程顾问</a>
+							<a href="/xiaozhang/" leibie="xiaozhang">校长</a>
+							<a href="/tuozhanshi/" leibie="tuozhanshi">野外拓展训练师</a>
+						</li>
+						<li dsid="23196"><strong><a href="/fanyizhaopin/" leibie="fanyizhaopin">翻译</a></strong>
+							<a href="/yingyufanyi/" leibie="yingyufanyi">英语翻译</a>
+							<a href="/riyufanyi/" leibie="riyufanyi">日语翻译</a>
+							<a href="/hanyu/" leibie="hanyu">韩语翻译</a>
+							<a href="/fayufanyi/" leibie="fayufanyi">法语翻译</a>
+							<a href="/eyufanyi/" leibie="eyufanyi">俄语翻译</a>
+							<a href="/deyufanyi/" leibie="deyufanyi">德语翻译</a>
+							<a href="/xibanyayu/" leibie="xibanyayu">西班牙语翻译</a>
+							<a href="/yidaliyu/" leibie="yidaliyu">意大利语翻译</a>
+							<a href="/putaoyayu/" leibie="putaoyayu">葡萄牙语翻译</a>
+							<a href="/alaboyu/" leibie="alaboyu">阿拉伯语翻译</a>
+							<a href="/jyxiaoyuzhongfanyi/" leibie="jyxiaoyuzhongfanyi">小语种翻译</a>
+						</li>
+						<li dsid="13925"><strong><a href="/zpxiezuochuban/" leibie="zpxiezuochuban">编辑/出版/印刷</a></strong>
+							<a href="/cbzhubian/" leibie="cbzhubian">总编/副总编/主编</a>
+							<a href="/bianji/" leibie="bianji">编辑/撰稿</a>
+							<a href="/jizhe/" leibie="jizhe">记者/采编</a>
+							<a href="/cbchuban/" leibie="cbchuban">出版/发行</a>
+							<a href="/cbyishua/" leibie="cbyishua">排版设计/制作</a>
+							<a href="/cbyinshuacaozuo/" leibie="cbyinshuacaozuo">印刷操作</a>
+							<a href="/zhuangdingyuan/" leibie="zhuangdingyuan">装订/烫金</a>
+						</li>
+					</ul>
+					<ul style="display: none;">
+						<li dsid="13907"><strong><a href="/zpcaiwushenji/" leibie="zpcaiwushenji">财务/审计/统计</a></strong>
+							<a href="/caiwujingli/" leibie="caiwujingli">财务经理/主管</a>
+							<a href="/caiwuzongjian/" leibie="caiwuzongjian">财务总监</a>
+							<a href="/caiwu/" leibie="caiwu">会计/会计师</a>
+							<a href="/caiwuzhuli/" leibie="caiwuzhuli">财务/会计助理</a>
+							<a href="/chuna/" leibie="chuna">出纳</a>
+							<a href="/tongjishenji/" leibie="tongjishenji">审计专员/助理</a>
+							<a href="/shenjijingli/" leibie="shenjijingli">审计经理/主管</a>
+							<a href="/tongjiyuan/" leibie="tongjiyuan">统计员</a>
+							<a href="/shuiwuzhuanyuan/" leibie="shuiwuzhuanyuan">税务专员/助理</a>
+							<a href="/shuiwujingli/" leibie="shuiwujingli">税务经理/主管</a>
+							<a href="/caiwufenxi/" leibie="caiwufenxi">财务分析员</a>
+							<a href="/zpchengben/" leibie="zpchengben">成本管理员</a>
+						</li>
+						<li dsid="23194"><strong><a href="/jinrongtouzi/" leibie="jinrongtouzi">金融/银行/证券/投资</a></strong>
+							<a href="/jingjiren/" leibie="jingjiren">证券/期货/外汇经纪人</a>
+							<a href="/zhengquanjingli/" leibie="zhengquanjingli">证券经理/总监</a>
+							<a href="/zhengquanfenxi/" leibie="zhengquanfenxi">证券分析/金融研究</a>
+							<a href="/yinhangyewu/" leibie="yinhangyewu">信用卡/银行卡业务</a>
+							<a href="/yinhangjingli/" leibie="yinhangjingli">银行经理/主任</a>
+							<a href="/yinhangkuaiji/" leibie="yinhangkuaiji">银行会计/柜员</a>
+							<a href="/zichanpinggu/" leibie="zichanpinggu">信贷管理/资信评估</a>
+							<a href="/zcpinggu/" leibie="zcpinggu">资产评估</a>
+							<a href="/danbaopaimai/" leibie="danbaopaimai">担保/拍卖/典当</a>
+							<a href="/paimaishi/" leibie="paimaishi">拍卖师</a>
+							<a href="/waihuijingli/" leibie="waihuijingli">外汇/基金/国债经理人</a>
+							<a href="/jinrong/" leibie="jinrong">投资/理财顾问</a>
+							<a href="/rongzizhuanyuan/" leibie="rongzizhuanyuan">融资专员</a>
+							<a href="/rongzijingli/" leibie="rongzijingli">融资经理/总监</a>
+							<a href="/fengxiankongzhi/" leibie="fengxiankongzhi">风险管理/控制</a>
+							<a href="/caopanshou/" leibie="caopanshou">股票交易员</a>
+						</li>
+						<li dsid="9250"><strong><a href="/zpjinrongbaoxian/" leibie="zpjinrongbaoxian">保险</a></strong>
+							<a href="/chubeijingli/" leibie="chubeijingli">储备经理人</a>
+							<a href="/baoxianjchanpin/" leibie="baoxianjchanpin">保险客户经理</a>
+							<a href="/baoxianlipei/" leibie="baoxianlipei">车险专员</a>
+							<a href="/baoxianneiqin/" leibie="baoxianneiqin">保险内勤</a>
+							<a href="/baoxianpeixun/" leibie="baoxianpeixun">保险培训师</a>
+							<a href="/baoxianxuqi/" leibie="baoxianxuqi">保险客服</a>
+							<a href="/baoxianguwen/" leibie="baoxianguwen">保险顾问</a>
+							<a href="/baoxian/" leibie="baoxian">保险经纪人</a>
+							<a href="/baoxianjingli/" leibie="baoxianjingli">保险项目经理</a>
+							<a href="/baoxianjingsuan/" leibie="baoxianjingsuan">保险精算师</a>
+							<a href="/qiyueguanli/" leibie="qiyueguanli">保险其他职位</a>
+						</li>
+					</ul>
+					<ul style="display: none;">
+						<li dsid="13919"><strong><a href="/zpyiyuanyiliao/" leibie="zpyiyuanyiliao">医院/医疗/护理</a></strong>
+							<a href="/yiliao/" leibie="yiliao">医生</a>
+							<a href="/baojianyisheng/" leibie="baojianyisheng">保健医生</a>
+							<a href="/yyxinliyisheng/" leibie="yyxinliyisheng">心理医生</a>
+							<a href="/hushi/" leibie="hushi">护士/护理</a>
+							<a href="/hushizhang/" leibie="hushizhang">护理主任/护士长</a>
+							<a href="/daoyiyuan/" leibie="daoyiyuan">导医</a>
+							<a href="/yyyaokuzhuren/" leibie="yyyaokuzhuren">药剂师</a>
+							<a href="/yyliliaoshi/" leibie="yyliliaoshi">理疗师</a>
+							<a href="/yyyiyaoxuejianyan/" leibie="yyyiyaoxuejianyan">医药质检</a>
+							<a href="/yyyiyuan/" leibie="yyyiyuan">医疗管理</a>
+							<a href="/yymeirongzhengxing/" leibie="yymeirongzhengxing">美容整形师</a>
+							<a href="/yanguangshi/" leibie="yanguangshi">验光师</a>
+							<a href="/yyyingyangshi/" leibie="yyyingyangshi">营养师</a>
+							<a href="/chongwuyisheng/" leibie="chongwuyisheng">宠物护理/兽医</a>
+						</li>
+						<li dsid="38677"><strong><a href="/zpzhiyao/" leibie="zpzhiyao">制药/生物工程</a></strong>
+							<a href="/yiyaoyanfa/" leibie="yiyaoyanfa">医药研发/生产/注册</a>
+							<a href="/linchuangyanjiu/" leibie="linchuangyanjiu">临床研究/协调</a>
+							<a href="/shengwugongcheng/" leibie="shengwugongcheng">生物工程/生物制药</a>
+							<a href="/yiliaoyanfa/" leibie="yiliaoyanfa">医疗器械研发/维修</a>
+						</li>
+						<li dsid="24513"><strong><a href="/huanbao/" leibie="huanbao">环保</a></strong>
+							<a href="/wushuichuli/" leibie="wushuichuli">污水处理工程师</a>
+							<a href="/hjgongchengjishu/" leibie="hjgongchengjishu">环境工程技术</a>
+							<a href="/hjguanli/" leibie="hjguanli">环境管理/保护</a>
+							<a href="/huanbaojishu/" leibie="huanbaojishu">环保技术</a>
+							<a href="/ehsguanli/" leibie="ehsguanli">EHS管理</a>
+							<a href="/huanbaoshi/" leibie="huanbaoshi">环保工程师</a>
+							<a href="/huanbaojiance/" leibie="huanbaojiance">环保检测</a>
+							<a href="/shuizhijiance/" leibie="shuizhijiance">水质检测员</a>
+							<a href="/hjlvhua/" leibie="hjlvhua">环境绿化</a>
+						</li>
+					</ul>
+					<ul style="display: none;">
+						<li dsid="13914"><strong><a href="/zpfangchanjianzhu/" leibie="zpfangchanjianzhu">建筑</a></strong>
+							<a href="/jianzhugongcheng/" leibie="jianzhugongcheng">工程项目管理</a>
+							<a href="/gongchengjianli/" leibie="gongchengjianli">工程监理</a>
+							<a href="/jianzhugongchengshi/" leibie="jianzhugongchengshi">建筑工程师/总工</a>
+							<a href="/jiegoutumu/" leibie="jiegoutumu">土木/土建工程师</a>
+							<a href="/gongchengzhaojia/" leibie="gongchengzhaojia">造价师/预算师</a>
+							<a href="/muqiang/" leibie="muqiang">幕墙工程师</a>
+							<a href="/jianzhuanfang/" leibie="jianzhuanfang">安防工程师</a>
+							<a href="/jzanquanguanli/" leibie="jzanquanguanli">安全管理/安全员</a>
+							<a href="/gongluqiaoliang/" leibie="gongluqiaoliang">道路桥梁技术</a>
+							<a href="/geipaishui/" leibie="geipaishui">给排水/制冷/暖通</a>
+							<a href="/cehuiceliang/" leibie="cehuiceliang">测绘/测量</a>
+							<a href="/fangwusj/" leibie="fangwusj">园林/景观设计</a>
+							<a href="/ziliao/" leibie="ziliao">资料员</a>
+							<a href="/shizhenggc/" leibie="shizhenggc">市政工程师</a>
+							<a href="/buxianruodian/" leibie="buxianruodian">综合布线/弱电</a>
+						</li>
+						<li dsid="38672"><strong><a href="/zpwuye/" leibie="zpwuye">物业管理</a></strong>
+							<a href="/wuye/" leibie="wuye">物业管理员</a>
+							<a href="/zonghewuyeweixiugong/" leibie="zonghewuyeweixiugong">物业维修</a>
+							<a href="/wuyejingli/" leibie="wuyejingli">物业经理/主管</a>
+							<a href="/jzhetong/" leibie="jzhetong">合同管理</a>
+							<a href="/fczhaoshang/" leibie="fczhaoshang">招商经理/主管</a>
+						</li>
+						<li dsid="24466"><strong><a href="/nonglinmuyu/" leibie="nonglinmuyu">农/林/牧/渔业</a></strong>
+							<a href="/siliao/" leibie="siliao">饲料业务</a>
+							<a href="/yangzhi/" leibie="yangzhi">养殖人员</a>
+							<a href="/nongyishi/" leibie="nongyishi">农艺师/花艺师</a>
+							<a href="/xumushi/" leibie="xumushi">畜牧师</a>
+							<a href="/nongchangzhu/" leibie="nongchangzhu">场长</a>
+							<a href="/yangzhizhuguan/" leibie="yangzhizhuguan">养殖部主管</a>
+							<a href="/siliaoyanfa/" leibie="siliaoyanfa">动物营养/饲料研发</a>
+						</li>
+						<li dsid="13961"><strong><a href="/zhaopin/" leibie="zhaopin">其他招聘信息</a></strong>
+							<a href="/cgqitazhiwei/" leibie="cgqitazhiwei">其他职位</a>
+						</li>
+						<li dsid="13889"><strong><a href="/zhaopinhui/" leibie="zhaopinhui">招聘会</a></strong>
+							<a href="/zhuanchang/" leibie="zhuanchang">专场招聘会</a>
+							<a href="/zphyingjiesheng/" leibie="zphyingjiesheng">应届生招聘会</a>
+							<a href="/zphzonghe/" leibie="zphzonghe">综合招聘会</a>
+							<a href="/zphgaoji/" leibie="zphgaoji">中高级人才招聘会</a>
+						</li>
+					</ul>
+				</div>
+			</div>			
+		</div>
+		<!-- 全部职位 end -->
+		<!-- hotposCate end-->
+		<!-- bottom start-->
+		<div class="bottom">
+			<div class="channelIntro">
+				<h3>沈阳招聘频道介绍</h3>
+				<p>58同城沈阳招聘网提供全面沈阳人才网招聘信息、沈阳招聘职位信息，助沈阳人才，求职招聘入职快。沈阳人才市场首选58同城 <a href="/job.shtml">沈阳招聘</a></p>
+			</div>
+			<div class="hotCity">
+				<h3>沈阳招聘相关热门城市</h3>
+				<ul class="clearfix">
+        			<li>
+        				<a href="http://sh.58.com/job.shtml">上海招聘</a>
+        			</li>
+					<li>
+						<a href="http://bj.58.com/job.shtml">北京招聘</a>
+					</li>
+					<li>
+						<a href="http://sz.58.com/job.shtml">深圳招聘</a>
+					</li>
+					<li>
+						<a href="http://gz.58.com/job.shtml">广州招聘</a>
+					</li>
+					<li>
+						<a href="http://tj.58.com/job.shtml">天津招聘</a>
+					</li>
+					<li>
+						<a href="http://nj.58.com/job.shtml">南京招聘</a>
+					</li>
+					<li>
+						<a href="http://dl.58.com/job.shtml">大连招聘</a>
+					</li>
+					<li>
+						<a href="http://hz.58.com/job.shtml">杭州招聘</a>
+					</li>
+					<li>
+						<a href="http://sy.58.com/job.shtml">沈阳招聘</a>
+					</li>
+					<li>
+						<a href="http://hrb.58.com/job.shtml">哈尔滨招聘</a>
+					</li>
+					<li>
+						<a href="http://cd.58.com/job.shtml">成都招聘</a>
+					</li>
+					<li>
+						<a href="http://dg.58.com/job.shtml">东莞招聘</a>
+					</li>
+					<li>
+						<a href="http://jn.58.com/job.shtml">济南招聘</a>
+					</li>
+					<li>
+						<a href="http://fs.58.com/job.shtml">佛山招聘</a>
+					</li>
+					<li>
+						<a href="http://wx.58.com/job.shtml">无锡招聘</a>
+					</li>
+					<li>
+						<a href="http://cs.58.com/job.shtml">长沙招聘</a>
+					</li>
+					<li>
+						<a href="http://wh.58.com/job.shtml">武汉招聘</a>
+					</li>
+					<li>
+						<a href="http://nb.58.com/job.shtml">宁波招聘</a>
+					</li>
+					<li>
+						<a href="http://cc.58.com/job.shtml">长春招聘</a>
+					</li>
+					<li>
+						<a href="http://su.58.com/job.shtml">苏州招聘</a>
+					</li>
+					<li>
+						<a href="http://qd.58.com/job.shtml">青岛招聘</a>
+					</li>
+				</ul>
+			</div>
+			<div class="friendlinks">
+				<div class="linkList">
+					<strong>友情链接</strong>:<a href='http://www.788job.net' target='_blank'>门窗幕墙人才网</a>&nbsp;<a href='http://www.ahzhaopin.net' target='_blank'>安徽招聘网</a>&nbsp;<a href='http://www.bljob.cn' target='_blank'>玻璃人才网</a>&nbsp;<a href='http://www.nyjob.com.cn' target='_blank'>诺亚人才网</a>&nbsp;<a href='http://www.lyrce.net/' target='_blank'>龙游人才网</a>&nbsp;<a href='http://www.diugua.com/' target='_blank'>卫生人才网</a>&nbsp;<a href='http://job.srtong.com/' target='_blank'>上饶通人才网</a>&nbsp;<a href='http://0769.job1001.com/' target='_blank'>东莞人才网</a>&nbsp;<a href='http://gaokao.zgjhjy.com' target='_blank'>京翰高考网</a>&nbsp;<a href='http://www.lyjob.cn' target='_blank'>洛阳人才网</a>&nbsp;<a href='http://www.caiwubaobiao.com' target='_blank'>财务报表</a>&nbsp;<a href='http://sy.ganji.com/zhaopin/' target='_blank'>沈阳招聘</a>&nbsp;<a href='http://www.ynzp.com/lj' target='_blank'>丽江招聘</a>&nbsp;<a href='http://sy.58.com/jiudianzp/' target='_blank'>沈阳酒店招聘网</a>&nbsp;  <a href="/link.html" target="_blank">更多...</a>
+				</div>
+			</div>
+		</div>
+		<!-- bottom end-->
+	</div>
+</div>
+<!-- main end -->
+<!-- foot start -->
+<div class="wb-foot">
+	<div class="wb-footer">
+		&copy;&nbsp;58.com<a href="http://about.58.com/" rel="nofollow">联系客服</a><a href="/joblist.shtml">沈阳人才网</a>
+	</div>
+</div>
+<!-- foot end -->
+
+<script type="text/javascript" src="http://j1.58cdn.com.cn/job/pc/common/0.1/jquery/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="http://j1.58cdn.com.cn/job/pc/full/cate/0.1/boot_toplist_version.js?v=3"></script>
+<script type="text/javascript" src="http://j1.58cdn.com.cn/job/pc/full/cate/0.1/jobCates.js?v=0"></script>
+<script type="text/javascript" src="http://j1.58cdn.com.cn/job/pc/full/cate/0.1/job-bj.js?v=7"></script>
+<script type="text/javascript" src="http://j1.58cdn.com.cn/componentsLoader/dist/ComponentsLoader.js?20170111"></script>
+<script type="text/javascript">
+    document.domain = '58.com';
+    var win1 = new GetToolTipWindow('tooltipdiv1', 'keyword1', '2','1','',true);
+    boot.require('util.cookie', function (Frame, cookie) {cookie.set("city", "sy");})
+</script>
+
+<script type="text/javascript">
+/*  ZP-1315 nn.58.com/job.shtml add meirongmeifa */
+(function(){
+	try{var cityName = ____json4fe.locallist.listname;}catch(e){return;}
+	var obj=$("#meirongshi"),obj1=$("#hotjob"); if(obj.length == 0||obj1.length == 0) {return;}
+	if(cityName=="nn"){obj.html('<a class="red" href="/meirongshi/?from=mrnn2_zhaopin">美容师</a>');}
+	/* ZP-1452 fs add  */
+	if(cityName=="fs"){obj1.append('<li><a href="/job/?jobfrom=special&specialtype=288&from=taoci2_zhaopin" tongji_tag="fs_zp_tcwy" style="background:#def2fe; padding: 3px 6px;border:1px solid #91e2fd;" target="_blank">陶瓷卫浴</a></li><li><a href="/job/?jobfrom=special&specialtype=289&from=dengshi2_zhaopin" tongji_tag="fs_zp_jjds" style="background:#e6f2cf;padding:3px 6px;border:1px solid #90d52d;" target="_blank">家具灯饰</a></li><li><a href="/job/?jobfrom=special&specialtype=258&from=fangzhi2_zhaopin" tongji_tag="fs_zp_fzfs" style="background:#ffe1d4;padding:3px 6px;border:1px solid #f5896e;" target="_blank">纺织服饰</a></li>');}
+})();
+</script>
+<script type="text/javascript" src="http://j2.58cdn.com.cn/js/track_alliance.js"></script>
+<script type="text/javascript">
+//广告位
+	document.write('<scr' + 'ipt type="text/javascript" src="http://track.58.com/adsys/cateadsys/?pagetype=4&cate=job&t='+Math.random()+'"></scr' + 'ipt>');
+</script>
+<script type="text/javascript">
+$(function(){
+$(document.body).append('<scr' + 'ipt src="http://usdtop.58.com/advertising/echo.js?cityid=188&city=sy&cateid=0&categorycode=1034_1035_1041_1042&rand=' + Math.random() + '"></scr' + 'ipt>');});
+</script>
+
+</body>
+</html>
+{% endblock %}

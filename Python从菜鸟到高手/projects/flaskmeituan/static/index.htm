@@ -1,0 +1,2679 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>沈阳美团网-沈阳美食_酒店_旅游_团购_电影_吃喝玩乐</title>
+  <meta name="description" content="沈阳美团网精选沈阳美食餐厅,酒店预订,电影票,旅游景点,外卖订餐,沈阳团购信息,您可查询商家评价店铺信息。沈阳生活,下载美团官方APP ,吃喝玩乐1折起。" />
+  <meta name="keyword" content="沈阳美食,沈阳酒店,沈阳团购" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="address=no" />
+  <meta name="lx:category" content="group" />
+  <meta name="lx:cid" content="c_91bx6nzd" />
+  <meta name="lx:appnm" content="mtpc" />
+  <meta name="lx:autopv" content="off" />
+  <link rel="dns-prefetch" href="http://analytics.meituan.net/" />
+  <link rel="dns-prefetch" href="http://analytics.meituan.net/" />
+  <link rel="dns-prefetch" href="http://www.meituan.com/" />
+  <link rel="dns-prefetch" href="http://s0.meituan.net/" />
+  <link rel="dns-prefetch" href="http://s1.meituan.net/" />
+  <link rel="dns-prefetch" href="http://p0.meituan.net/" />
+  <link rel="dns-prefetch" href="http://p1.meituan.net/" />
+  <link rel="stylesheet" type="text/css" href="static/index/a_002.css" />
+  <link rel="stylesheet" type="text/css" href="static/index/a.css" />
+  <script async="" src="/static/index/a_008"></script>
+  <script src="/static/index/a_005"></script>
+  <script src="/static/index/a"></script>
+  <script src="/static/index/a_003"></script>
+  <script src="/static/index/a_002"></script>
+  <script src="/static/index/a_007"></script>
+  <script src="/static/index/a_009"></script>
+  <script src="/static/index/a_004"></script>
+  <script src="/static/index/a_006"></script>
+  <script language="JavaScript" src="/static/javascripts/jquery-3.1.1.js"></script>
+  <script src="/static/javascripts/vue.min.js"></script>
+  <script  language="JavaScript" src="/static/javascripts/index.js"></script>
+  <script>
+  !(function (win, doc, ns) {
+    var cacheFunName = '_MeiTuanALogObject';
+    win[cacheFunName] = ns;
+    if (!win[ns]) {
+        var _LX = function () {
+            _LX.q.push(arguments);
+            return _LX;
+        };
+        _LX.q = _LX.q || [];
+        _LX.l = +new Date();
+        win[ns] = _LX;
+    }
+})(window, document, 'LXAnalytics');
+var valLab = null;
+//- 补充pv事件信息
+LXAnalytics('pageView', valLab);
+;(function(exports, undefined){
+    /**
+    * on
+    */
+    function on(el, type, fn){
+        if(!(el instanceof Node)) throw new TypeError('`element` must be a Element');
+        if(typeof type !== 'string') throw new TypeError('`type` must be a String');
+        if(typeof fn !== 'function') throw new TypeError('`handler` must be a Function');
+        return el.addEventListener(type, fn);
+    }
+    // bind dom ready
+    on(document, 'DOMContentLoaded', function(){
+        // @docs http://lx.docs.sankuai.com/web/#_4
+        on(document, 'click', function(e){
+            var el = e.target;
+            var bid = el.getAttribute('data-bid');
+            var lab = el.getAttribute('data-lab');
+            if(bid !== null){
+                LXAnalytics('moduleClick', bid, lab);
+            }
+        });
+    });
+
+})(this);</script>
+  <script src="/static/index/analytics.js" type="text/javascript" charset="utf-8" async="" defer="defer"></script>
+  <script>!function (e, t, n) {
+    function s() {
+        var e = t.createElement("script");
+        e.async = !0, e.src = "https://s0.meituan.net/bs/js/?f=mta-js:mta.min.js";
+        var n = t.getElementsByTagName("script")[0];
+        n.parentNode.insertBefore(e, n)
+    }
+
+    "[object String]" === Object.prototype.toString.call(n) && (n = [n]), e.MeituanAnalyticsObject = n;
+    for (var r = 0; r < n.length; r++)!function (t) {
+        e[t] = e[t] || function () {
+                    (e[t].q = e[t].q || []).push(arguments)
+                }
+    }(n[r]);
+    if ("complete" === t.readyState)s(); else {
+        var i = "addEventListener", a = "attachEvent";
+        if (e[i])e[i]("load", s, !1); else if (e[a])e[a]("onload", s); else {
+            var o = e.onload;
+            e.onload = function () {
+                s(), o && o()
+            }
+        }
+    }
+}(window, document, "mta"), function (e, t, n) {
+    if (t && !("_mta" in t)) {
+        t._mta = !0;
+        var s = e.location.protocol;
+        if ("file:" !== s) {
+            var r = e.location.host, i = t.prototype.open;
+            t.prototype.open = function (t, n, a, o, l) {
+                if (this._method = "string" == typeof t ? t.toUpperCase() : null, n) {
+                    if (0 === n.indexOf("http://") || 0 === n.indexOf("https://") || 0 === n.indexOf("//"))this._url = n; else if (0 === n.indexOf("/"))this._url = s + "//" + r + n; else {
+                        var h = s + "//" + r + e.location.pathname;
+                        h = h.substring(0, h.lastIndexOf("/") + 1), this._url = h + n
+                    }
+                    var u = this._url.indexOf("?");
+                    -1 !== u ? (this._searchLength = this._url.length - 1 - u, this._url = this._url.substring(0, u)) : this._searchLength = 0
+                } else this._url = null, this._searchLength = 0;
+                return this._startTime = (new Date).getTime(), i.apply(this, arguments)
+            };
+            var a = "onreadystatechange", o = "addEventListener", l = t.prototype.send;
+            t.prototype.send = function (t) {
+                function n(n, r) {
+                    if (0 !== n._url.indexOf(s + "//frep.meituan.net/_.gif")) {
+                        for (var i = "browser.ajax", a = [98, 114, 111, 119, 115, 101, 114, 46, 97, 106, 97, 120], o = 0, l = i.length; l > o; o++)if (i.charCodeAt(o) !== a[o])return;
+                        var h;
+                        if (n.response)switch (n.responseType) {
+                            case"json":
+                                h = JSON && JSON.stringify(n.response).length;
+                                break;
+                            case"blob":
+                            case"moz-blob":
+                                h = n.response.size;
+                                break;
+                            case"arraybuffer":
+                                h = n.response.byteLength;
+                            case"document":
+                                h = n.response.documentElement && n.response.documentElement.innerHTML && n.response.documentElement.innerHTML.length + 28;
+                                break;
+                            default:
+                                h = n.response.length
+                        }
+                        e.mta("send", i, {
+                            url: n._url,
+                            method: n._method,
+                            error: !(0 === n.status.toString().indexOf("2") || 304 === n.status),
+                            responseTime: (new Date).getTime() - n._startTime,
+                            requestSize: n._searchLength + (t ? t.length : 0),
+                            responseSize: h || 0
+                        })
+                    }
+                }
+
+                if (o in this) {
+                    var r = function (e) {
+                        n(this, e)
+                    };
+                    this[o]("load", r), this[o]("error", r), this[o]("abort", r)
+                } else {
+                    var i = this[a];
+                    this[a] = function (t) {
+                        i && i.apply(this, arguments), 4 === this.readyState && e.mta && e.mta && n(this, t)
+                    }
+                }
+                return l.apply(this, arguments)
+            }
+        }
+    }
+}(window, window.XMLHttpRequest, "mta");
+//- 初始化项目
+mta("create", '59918eb8616ab3217c7eeaf5');
+//- 推荐设置上报地址为 HTTPS 协议，以获得更高的数据准确性，默认会和页面协议一致
+mta("config", "beaconImage", "https://frep.meituan.net/_.gif");
+
+//- 设置采样率
+mta('config', 'sampleRate', 20);
+
+//- 发送页面性能指标，包括 ttfb（首字节）、domReady（可交互）、load（完全加载）等
+mta("send", "page");</script>
+ </head>
+ <body id="main">
+  <div id="app">
+   <div data-reactroot="" class="page index">
+    <header class="com-header">
+     <div class="header-bar">
+      <div class="header-content clearfix">
+       <div class="header-bar-position">
+        <span class="header-icon icon-header_location"></span>
+        <span class="current-city">沈阳</span>
+        <a class="change-city" href="http://www.meituan.com/index/changecity/initiative">切换城市</a>
+        <!-- react-text: 9 -->[
+        <!-- /react-text -->
+        <a class="city-guess" href="http://fushun.meituan.com/">抚顺</a>
+        <a class="city-guess" href="http://dengta.meituan.com/">灯塔</a>
+        <a class="city-guess" href="http://xinmin.meituan.com/">新民</a>
+        <!-- react-text: 13 -->]
+        <!-- /react-text -->
+       </div>
+       <nav class="header-bar-nav">
+        <ul class="header-nav-first">
+         <li class="has-child">
+          <!-- react-text: 17 -->我的美团
+          <!-- /react-text -->
+          <ul class="header-nav-my header-nav-second" style="display: none;">
+           <li><a rel="nofollow" href="http://www.meituan.com/orders/" target="_blank">我的订单</a></li>
+           <li><a rel="nofollow" href="http://www.meituan.com/rates/" target="_blank">我的评价</a></li>
+           <li><a rel="nofollow" href="http://www.meituan.com/collections/" target="_blank">我的收藏</a></li>
+           <li><a rel="nofollow" href="http://www.meituan.com/card/list" target="_blank">抵用券</a></li>
+           <li><a rel="nofollow" href="http://www.meituan.com/account/credit" target="_blank">我的余额</a></li>
+           <li><a rel="nofollow" href="http://www.meituan.com/account/settings" target="_blank">账户设置</a></li>
+          </ul></li>
+         <li><a href="http://i.meituan.com/mobile/down/meituan" target="_blank">手机APP</a></li>
+         <li class="has-child">
+          <!-- react-text: 34 -->商家中心
+          <!-- /react-text -->
+          <ul class="header-nav-merchant header-nav-second" style="display: none;">
+           <li><a rel="nofollow" href="http://e.meituan.com/" target="_blank">登录商家中心</a></li>
+           <li><a rel="nofollow" href="http://emis.meishi.meituan.com/merchantsSettled" target="_blank">我想合作</a></li>
+           <li><a rel="nofollow" href="http://e.meituan.com/mobile/" target="_blank">手机免费开店</a></li>
+          </ul></li>
+         <li class="has-child">
+          <!-- react-text: 43 -->网站导航
+          <!-- /react-text -->
+          <div class="header-nav-site header-nav-second" style="display: none;">
+           <dl class="header-jiulv header-nav-third">
+            <dt>
+             酒店旅游
+            </dt>
+            <dd>
+             <a href="http://hotel.meituan.com/shenyang/" target="_blank">酒店</a>
+            </dd>
+            <dd>
+             <a href="http://hotel.meituan.com/shenyang/c-haohuajiudian" target="_blank">高端酒店</a>
+            </dd>
+            <dd>
+             <a href="http://hotel.meituan.com/shenyang/c-zhutijiudian" target="_blank">主题酒店</a>
+            </dd>
+            <dd>
+             <a href="http://hotel.meituan.com/shenyang/c-qingnianlvshe" target="_blank">青年旅社</a>
+            </dd>
+            <dd>
+             <a href="http://hotel.meituan.com/shenyang/c-kezhan" target="_blank">客栈</a>
+            </dd>
+            <dd>
+             <a href="http://sy.meituan.com/category/mobile_poi_zhoubianyou" target="_blank">周边游</a>
+            </dd>
+            <dd>
+             <a href="http://sy.meituan.com/category/youle" target="_blank">景点门票</a>
+            </dd>
+            <dd>
+             <a href="http://sy.meituan.com/category/wenquan" target="_blank">温泉</a>
+            </dd>
+            <dd>
+             <a href="http://sy.meituan.com/category/nongjiale" target="_blank">农家乐</a>
+            </dd>
+            <dd>
+             <a href="http://sy.meituan.com/category/zhutigongyuan" target="_blank">公园游乐园</a>
+            </dd>
+            <dd>
+             <a href="http://trip.meituan.com/dujia/gentuanyou" target="_blank">跟团游</a>
+            </dd>
+            <dd>
+             <a href="http://trip.meituan.com/dujia/guoneiyou" target="_blank">国内游</a>
+            </dd>
+            <dd>
+             <a href="http://trip.meituan.com/dujia/jingwaiyou" target="_blank">境外游</a>
+            </dd>
+            <dd>
+             <a href="http://trip.meituan.com/dujia/qianzheng" target="_blank">签证</a>
+            </dd>
+           </dl>
+           <dl class="header-meishi header-nav-third">
+            <dt>
+             吃美食
+            </dt>
+            <dd>
+             <a href="http://sy.meituan.com/category/meishi" target="_blank">美食</a>
+            </dd>
+            <dd>
+             <a href="http://sy.meituan.com/category/kuaican" target="_blank">特色小吃</a>
+            </dd>
+            <dd>
+             <a href="http://sy.meituan.com/category/kaorou" target="_blank">烧烤</a>
+            </dd>
+            <dd>
+             <a href="http://sy.meituan.com/category/zizhucan" target="_blank">自助餐</a>
+            </dd>
+            <dd>
+             <a href="http://sy.meituan.com/category/huoguo" target="_blank">火锅</a>
+            </dd>
+            <dd>
+             <a href="http://sy.meituan.com/category/daijinquan_meishi" target="_blank">代金券</a>
+            </dd>
+           </dl>
+           <dl class="header-movie header-nav-third">
+            <dt>
+             看电影
+            </dt>
+            <dd>
+             <a href="http://sy.meituan.com/dianying/zuixindianying" target="_blank">热映电影</a>
+            </dd>
+           </dl>
+           <dl class="header-app header-nav-third">
+            <dt>
+             手机应用
+            </dt>
+            <dd>
+             <a href="http://i.meituan.com/mobile/down/meituan" target="_blank"><img class="appicon" src="/static/index/a_003.png" title="美团app" alt="美团app" /></a>
+            </dd>
+            <dd>
+             <a href="http://waimai.meituan.com/mobile/download/default" target="_blank"><img class="appicon" src="/static/index/a_008.png" title="外卖app" alt="外卖app" /></a>
+            </dd>
+            <dd>
+             <a href="http://www.zhenguo.com/" target="_blank"><img class="appicon" src="/static/index/a_004.png" title="榛果app" alt="榛果app" /></a>
+            </dd>
+            <dd>
+             <a href="http://www.dianping.com/events/m/index.htm" target="_blank"><img class="appicon" src="/static/index/a_009.png" title="点评app" alt="点评app" /></a>
+            </dd>
+            <dd>
+             <a href="http://maoyan.com/app" target="_blank"><img class="appicon" src="/static/index/a.png" title="猫眼app" alt="猫眼app" /></a>
+            </dd>
+           </dl>
+          </div></li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <div class="header-content clearfix">
+      <div class="header-title-module">
+       <div class="header-title">
+        <a href="http://sy.meituan.com/"><img src="/static/index/a_002.png" alt="美团" /></a>
+       </div>
+      </div>
+      <div class="header-search-module">
+       <div class="header-search-block">
+        <input class="header-search-input" placeholder="搜索商家或地点" type="text" />
+        <button class="header-search-btn"><span class="header-icon icon-search"></span></button>
+       </div>
+       <div class="header-search-suggest" style="display: none;">
+        <div class="header-search-noinput" style="display: block;">
+         <div style="display: none;">
+          <h6>最近搜索</h6>
+          <span class="header-search-clean">删除搜索历史</span>
+          <ul></ul>
+         </div>
+         <h6>热门搜索</h6>
+         <div class="header-search-hotword">
+          <a href="http://www.meituan.com/s?w=%E9%82%B5%E6%B1%87%E5%A4%A7%E8%99%BE">邵汇大虾</a>
+          <a href="http://www.meituan.com/s?w=%E5%B0%8F%E7%8C%AA%E5%B0%8F%E7%89%9B">小猪小牛</a>
+          <a href="http://www.meituan.com/s?w=%E9%87%8E%E4%BA%BA%E4%B8%B2%E5%90%A7">野人串吧</a>
+          <a href="http://www.meituan.com/s?w=%E5%A5%BD%E5%88%A9%E6%9D%A5">好利来</a>
+          <a href="http://www.meituan.com/s?w=%E5%BF%85%E8%83%9C%E5%AE%A2">必胜客</a>
+          <a href="http://www.meituan.com/s?w=%E8%9B%8B%E7%B3%95">蛋糕</a>
+          <a href="http://www.meituan.com/s?w=%E8%87%AA%E5%8A%A9">自助</a>
+          <a href="http://www.meituan.com/s?w=%E7%81%AB%E9%94%85">火锅</a>
+         </div>
+        </div>
+        <div class="header-search-input" style="display: none;">
+         <ul></ul>
+        </div>
+       </div>
+       <div class="header-search-hotword">
+        <a href="http://www.meituan.com/s?w=%E9%82%B5%E6%B1%87%E5%A4%A7%E8%99%BE">邵汇大虾</a>
+        <a href="http://www.meituan.com/s?w=%E5%B0%8F%E7%8C%AA%E5%B0%8F%E7%89%9B">小猪小牛</a>
+        <a href="http://www.meituan.com/s?w=%E9%87%8E%E4%BA%BA%E4%B8%B2%E5%90%A7">野人串吧</a>
+        <a href="http://www.meituan.com/s?w=%E5%A5%BD%E5%88%A9%E6%9D%A5">好利来</a>
+        <a href="http://www.meituan.com/s?w=%E5%BF%85%E8%83%9C%E5%AE%A2">必胜客</a>
+        <a href="http://www.meituan.com/s?w=%E8%9B%8B%E7%B3%95">蛋糕</a>
+        <a href="http://www.meituan.com/s?w=%E8%87%AA%E5%8A%A9">自助</a>
+        <a href="http://www.meituan.com/s?w=%E7%81%AB%E9%94%85">火锅</a>
+       </div>
+      </div>
+      <a class="header-commitment" href="http://www.meituan.com/commitment/" target="_blank">
+       <ul>
+        <li class="commitment-item"><i class="header-icon icon-tui"></i><span>随时退</span></li>
+        <li class="commitment-item"><i class="header-icon icon-tui2"></i><span>不满意免单</span></li>
+        <li class="commitment-item"><i class="header-icon icon-tui1"></i><span>过期退</span></li>
+       </ul></a>
+     </div>
+    </header>
+    <div class="index-container">
+     <div class="banner-container clearfix">
+      <div class="left-banner">
+       <div class="category-nav-container">
+        <div class="category-nav-title-wrapper">
+         <span class="category-nav-title">全部分类</span>
+         <span class="title-icon"></span>
+        </div>
+        <div class="category-nav-content-wrapper">
+         <!-------------- www.geekori.com 分类美食--------------->
+		<ul id="field">
+		  <li class="nav-li" v-for="cs in css" :data-id=cs._id><i class="home-category-iconfont hc-icon-food"></i><span class="nav-text-wrapper"><span><a class="nav-text" href="/food" target="_blank">{{cs.field_name}}</a></span></span><i class="nav-right-arrow"></i></li>
+		 </ul>
+        </div>
+        <div class="category-nav-detail-wrapper">
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix" >
+            <h2><a href="/food" class="detail-title" target="_blank">美食</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/meishi/" target="_blank">
+             <!-- react-text: 288 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content" id="meishi">
+
+            <a class="detail-text" href="/food" target="_blank" v-for="ms in mss">{{ms.sub_field_name}}</a>
+
+           </div>
+          </div>
+         </div>
+         <!-------------- ori 分类美食--------------->
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://waimai.meituan.com/" class="detail-title" target="_blank">外卖</a></h2>
+            <a class="detail-more" href="http://waimai.meituan.com/" target="_blank">
+             <!-- react-text: 325 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://waimai.meituan.com/" target="_blank">美团外卖</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://hotel.meituan.com/" class="detail-title" target="_blank">酒店星级</a></h2>
+            <a class="detail-more" href="http://hotel.meituan.com/" target="_blank">
+             <!-- react-text: 335 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://hotel.meituan.com/shenyang/xj6" target="_blank">经济型</a>
+            <a class="detail-text" href="http://hotel.meituan.com/shenyang/xj45" target="_blank">舒适/三星</a>
+            <a class="detail-text" href="http://hotel.meituan.com/shenyang/xj23" target="_blank">高档/四星</a>
+            <a class="detail-text" href="http://hotel.meituan.com/shenyang/xj01" target="_blank">豪华/五星</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://maoyan.com/" class="detail-title" target="_blank">热映电影</a></h2>
+            <a class="detail-more" href="http://maoyan.com/" target="_blank">
+             <!-- react-text: 1005 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://maoyan.com/films/342598" target="_blank">敦刻尔克</a>
+            <a class="detail-text" href="http://maoyan.com/films/1144681" target="_blank">银魂 真人版</a>
+            <a class="detail-text" href="http://maoyan.com/films/334620" target="_blank">蜘蛛侠：英雄归来</a>
+            <a class="detail-text" href="http://maoyan.com/films/344264" target="_blank">战狼2</a>
+            <a class="detail-text" href="http://maoyan.com/films/249008" target="_blank">星际特工：千星之城</a>
+            <a class="detail-text" href="http://maoyan.com/films/246377" target="_blank">猩球崛起3：终极之战</a>
+            <a class="detail-text" href="http://maoyan.com/films/346167" target="_blank">黑白迷宫</a>
+            <a class="detail-text" href="http://maoyan.com/films/342067" target="_blank">赛车总动员3：极速挑战</a>
+            <a class="detail-text" href="http://maoyan.com/films/349452" target="_blank">声之形</a>
+            <a class="detail-text" href="http://maoyan.com/films/342176" target="_blank">杀破狼&middot;贪狼</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://maoyan.com/" class="detail-title" target="_blank">热门影院</a></h2>
+            <a class="detail-more" href="http://maoyan.com/" target="_blank">
+             <!-- react-text: 1023 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://www.meituan.com/shop/1557065" target="_blank">万达影城</a>
+            <a class="detail-text" href="http://www.meituan.com/shop/4191702" target="_blank">橙天嘉禾影城</a>
+            <a class="detail-text" href="http://www.meituan.com/shop/91357" target="_blank">金逸影城</a>
+            <a class="detail-text" href="http://www.meituan.com/shop/1941536" target="_blank">今世界影城</a>
+            <a class="detail-text" href="http://www.meituan.com/shop/32376" target="_blank">华臣影城</a>
+            <a class="detail-text" href="http://www.meituan.com/shop/1940914" target="_blank">星美国际影城</a>
+            <a class="detail-text" href="http://www.meituan.com/shop/52639003" target="_blank">横店电影城</a>
+            <a class="detail-text" href="http://www.meituan.com/shop/1524839" target="_blank">大商影城</a>
+            <a class="detail-text" href="http://www.meituan.com/shop/150358435" target="_blank">恒大影城</a>
+            <a class="detail-text" href="http://www.meituan.com/shop/1439139" target="_blank">CGV影城</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/xiuxianyule/" class="detail-title" target="_blank">休闲娱乐</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/xiuxianyule/" target="_blank">
+             <!-- react-text: 349 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c52/" target="_blank">足疗按摩</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c112/" target="_blank">洗浴汗蒸</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c234/" target="_blank">酒吧</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c230/" target="_blank">密室</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20773/" target="_blank">轰趴馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20772/" target="_blank">茶馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20104/" target="_blank">私人影院</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c218/" target="_blank">DIY手工坊</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c516/" target="_blank">采摘/农家乐</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20770/" target="_blank">网吧网咖</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c38/" target="_blank">游乐游艺</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20779/" target="_blank">VR</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20777/" target="_blank">桌面游戏</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c219/" target="_blank">真人CS</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20776/" target="_blank">棋牌室</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c26/" target="_blank">其他玩乐</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/xiuxianyule/c10/" class="detail-title" target="_blank">KTV</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/xiuxianyule/c10/" target="_blank">
+             <!-- react-text: 373 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c10/" target="_blank">KTV</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/jiankangliren/" class="detail-title" target="_blank">丽人</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/jiankangliren/" target="_blank">
+             <!-- react-text: 383 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/jiankangliren/c74/" target="_blank">美发</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiankangliren/c75/" target="_blank">美甲美睫</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiankangliren/c76/" target="_blank">美容美体</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiankangliren/c220/" target="_blank">瑜伽舞蹈</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiankangliren/c20422/" target="_blank">瘦身纤体</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiankangliren/c20419/" target="_blank">韩式定妆</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiankangliren/c20421/" target="_blank">祛痘</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiankangliren/c20420/" target="_blank">纹身</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiankangliren/c20418/" target="_blank">化妆品</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/jiehun/" class="detail-title" target="_blank">结婚</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/jiehun/" target="_blank">
+             <!-- react-text: 401 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20198/" target="_blank">婚纱摄影</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20303/" target="_blank">旅拍</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20641/" target="_blank">个性写真</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20210/" target="_blank">婚宴</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20201/" target="_blank">婚庆公司</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20199/" target="_blank">婚纱礼服</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20200/" target="_blank">西服定制</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20202/" target="_blank">婚戒首饰</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20204/" target="_blank">婚车租赁</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20206/" target="_blank">司仪主持</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20205/" target="_blank">彩妆造型</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20207/" target="_blank">婚礼跟拍</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20203/" target="_blank">婚礼小礼品</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiehun/c20208/" target="_blank">更多婚礼服务</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/qinzi/c20108/" class="detail-title" target="_blank">儿童乐园</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/qinzi/c20108/" target="_blank">
+             <!-- react-text: 424 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20514/" target="_blank">婴儿游泳</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20782/" target="_blank">其它亲子游乐</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/qinzi/c20045/" class="detail-title" target="_blank">幼儿教育</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/qinzi/c20045/" target="_blank">
+             <!-- react-text: 434 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20865/" target="_blank">早教中心</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20787/" target="_blank">少儿英语</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20789/" target="_blank">智力开发</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20790/" target="_blank">托班/幼儿园</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20864/" target="_blank">幼儿教育</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20791/" target="_blank">其他幼儿教育</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/qinzi/c398/" class="detail-title" target="_blank">亲子摄影</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/qinzi/c398/" target="_blank">
+             <!-- react-text: 448 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20048/" target="_blank">儿童摄影</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20515/" target="_blank">孕妇写真</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20783/" target="_blank">上门拍</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20784/" target="_blank">其他亲子摄影</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/qinzi/c20042/" class="detail-title" target="_blank">孕产护理</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/qinzi/c20042/" target="_blank">
+             <!-- react-text: 460 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20516/" target="_blank">月子会所</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20792/" target="_blank">产后恢复</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20793/" target="_blank">妇幼医院</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20794/" target="_blank">孕产用品</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20795/" target="_blank">开奶催乳</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20796/" target="_blank">月嫂</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20170/" target="_blank">亲子购物</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20785/" target="_blank">宝宝派对</a>
+            <a class="detail-text" href="http://sy.meituan.com/qinzi/c20171/" target="_blank">亲子服务</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/yundongjianshen/" class="detail-title" target="_blank">运动健身</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/yundongjianshen/" target="_blank">
+             <!-- react-text: 478 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20253/" target="_blank">健身中心</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20266/" target="_blank">武术场馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20256/" target="_blank">游泳馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20257/" target="_blank">羽毛球馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20268/" target="_blank">溜冰场</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20270/" target="_blank">射箭馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20258/" target="_blank">篮球场</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20259/" target="_blank">网球馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20262/" target="_blank">台球馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20265/" target="_blank">乒乓球</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20264/" target="_blank">足球场</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20260/" target="_blank">高尔夫场</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20261/" target="_blank">保龄球馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20263/" target="_blank">体育场馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20267/" target="_blank">马术场</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20269/" target="_blank">壁球馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/yundongjianshen/c20271/" target="_blank">更多运动</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/jiazhuang/c20180/" class="detail-title" target="_blank">装修设计</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/jiazhuang/c20180/" target="_blank">
+             <!-- react-text: 504 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20878/" target="_blank">半包装修</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20879/" target="_blank">全包装修</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20880/" target="_blank">清包装修</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/jiazhuang/c20182/" class="detail-title" target="_blank">装修建材</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/jiazhuang/c20182/" target="_blank">
+             <!-- react-text: 515 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20829/" target="_blank">地板</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20823/" target="_blank">瓷砖石材</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20825/" target="_blank">橱柜</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20835/" target="_blank">灯饰照明</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20826/" target="_blank">厨卫洁具</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20822/" target="_blank">油漆涂料</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20827/" target="_blank">集成吊顶</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20824/" target="_blank">墙纸墙艺</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20832/" target="_blank">门窗</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20831/" target="_blank">木材板材</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20828/" target="_blank">家用五金</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20834/" target="_blank">电工电料</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20830/" target="_blank">楼梯</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20833/" target="_blank">管材管件</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/jiazhuang/c20771/" class="detail-title" target="_blank">家具家居</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/jiazhuang/c20771/" target="_blank">
+             <!-- react-text: 537 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20838/" target="_blank">家具</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20840/" target="_blank">床上用品/家纺</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20841/" target="_blank">家居饰品</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20839/" target="_blank">厨具餐具</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20843/" target="_blank">智能家居</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/jiazhuang/c20184/" class="detail-title" target="_blank">家装卖场</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/jiazhuang/c20184/" target="_blank">
+             <!-- react-text: 550 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20847/" target="_blank">建材卖场</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20846/" target="_blank">家居卖场</a>
+            <a class="detail-text" href="http://sy.meituan.com/jiazhuang/c20845/" target="_blank">灯饰卖场</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/xuexipeixun/c20287/" class="detail-title" target="_blank">音乐培训</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/xuexipeixun/c20287/" target="_blank">
+             <!-- react-text: 562 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20313/" target="_blank">钢琴</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20314/" target="_blank">吉他</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20315/" target="_blank">小提琴</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20316/" target="_blank">古筝</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20317/" target="_blank">架子鼓</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20318/" target="_blank">声乐</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20319/" target="_blank">其他音乐培训</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/xuexipeixun/c20291/" class="detail-title" target="_blank">职业技术</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/xuexipeixun/c20291/" target="_blank">
+             <!-- react-text: 577 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20323/" target="_blank">美容化妆</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20324/" target="_blank">会计</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20325/" target="_blank">IT</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20326/" target="_blank">厨艺</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20622/" target="_blank">管理培训</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20623/" target="_blank">摄影培训</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20624/" target="_blank">司法考试</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20637/" target="_blank">公务员培训</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20327/" target="_blank">其他职业培训</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/xuexipeixun/c20286/" class="detail-title" target="_blank">外语培训</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/xuexipeixun/c20286/" target="_blank">
+             <!-- react-text: 594 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20306/" target="_blank">英语</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20307/" target="_blank">日语</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20308/" target="_blank">韩语</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20309/" target="_blank">法语</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20310/" target="_blank">德语</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20311/" target="_blank">汉语</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20620/" target="_blank">俄语</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20621/" target="_blank">西班牙语</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20312/" target="_blank">其他外语</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/xuexipeixun/c20288/" class="detail-title" target="_blank">美术培训</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/xuexipeixun/c20288/" target="_blank">
+             <!-- react-text: 611 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20320/" target="_blank">绘画</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20321/" target="_blank">书法</a>
+            <a class="detail-text" href="http://sy.meituan.com/xuexipeixun/c20322/" target="_blank">其他美术</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/yiliao/" class="detail-title" target="_blank">医疗健康</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/yiliao/" target="_blank">
+             <!-- react-text: 623 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/yiliao/c20275/" target="_blank">医院</a>
+            <a class="detail-text" href="http://sy.meituan.com/yiliao/c20276/" target="_blank">齿科口腔</a>
+            <a class="detail-text" href="http://sy.meituan.com/yiliao/c20277/" target="_blank">体检中心</a>
+            <a class="detail-text" href="http://sy.meituan.com/yiliao/c20278/" target="_blank">药店</a>
+            <a class="detail-text" href="http://sy.meituan.com/yiliao/c20279/" target="_blank">中医</a>
+            <a class="detail-text" href="http://sy.meituan.com/yiliao/c20283/" target="_blank">其他健康服务</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/aiche/" class="detail-title" target="_blank">爱车</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/aiche/" target="_blank">
+             <!-- react-text: 637 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20115/" target="_blank">洗车</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20116/" target="_blank">租车</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20117/" target="_blank">加油站</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20118/" target="_blank">维修保养</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20119/" target="_blank">驾校</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20120/" target="_blank">汽车美容</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20121/" target="_blank">陪练</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20135/" target="_blank">汽车用品</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20161/" target="_blank">停车场</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20162/" target="_blank">汽车保险</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20163/" target="_blank">4S店/汽车销售</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20164/" target="_blank">更多汽车服务</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20165/" target="_blank">汽车服务</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20174/" target="_blank">机油保养</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20212/" target="_blank">汽车报价</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20215/" target="_blank">二手车</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20216/" target="_blank">人人二手车</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20217/" target="_blank">高价收车</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20237/" target="_blank">广告驾校</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20246/" target="_blank">洗车叶子品类调整</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20299/" target="_blank">小保养</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20300/" target="_blank">镀晶镀膜</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20301/" target="_blank">汽车贴膜</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20302/" target="_blank">打蜡</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20380/" target="_blank">年检站</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20381/" target="_blank">交警队</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20382/" target="_blank">内饰清洁</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20412/" target="_blank">汽车报价测试</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20493/" target="_blank">轮胎安装</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20767/" target="_blank">汽车改装</a>
+            <a class="detail-text" href="http://sy.meituan.com/aiche/c20768/" target="_blank">汽车配件</a>
+           </div>
+          </div>
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/chongwu/c20691/" class="detail-title" target="_blank">宠物</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/chongwu/c20691/" target="_blank">
+             <!-- react-text: 676 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/chongwu/c25147/" target="_blank">宠物店</a>
+            <a class="detail-text" href="http://sy.meituan.com/chongwu/c25148/" target="_blank">宠物医院</a>
+           </div>
+          </div>
+         </div>
+         <div class="category-nav-detail">
+          <div class="detail-area">
+           <div class="detail-title-wrapper clearfix">
+            <h2><a href="http://sy.meituan.com/xiuxianyule/" class="detail-title" target="_blank">玩乐</a></h2>
+            <a class="detail-more" href="http://sy.meituan.com/xiuxianyule/" target="_blank">
+             <!-- react-text: 687 -->更多
+             <!-- /react-text --><i class="detail-right-arrow"></i></a>
+           </div>
+           <div class="detail-content">
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c10/" target="_blank">KTV</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c234/" target="_blank">酒吧</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c230/" target="_blank">密室</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c38/" target="_blank">游乐游艺</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20770/" target="_blank">网吧网咖</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20104/" target="_blank">私人影院</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c218/" target="_blank">DIY手工坊</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20777/" target="_blank">桌面游戏</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c516/" target="_blank">采摘/农家乐</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20776/" target="_blank">棋牌室</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20773/" target="_blank">轰趴馆</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c219/" target="_blank">真人CS</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c20779/" target="_blank">VR</a>
+            <a class="detail-text" href="http://sy.meituan.com/xiuxianyule/c26/" target="_blank">其他玩乐</a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="right-banner">
+       <div class="home-header-links">
+        <a class="waimai-link" href="http://waimai.meituan.com/" target="_blank">美团外卖</a>
+        <a class="maoyan-link" href="http://maoyan.com/" target="_blank">猫眼电影</a>
+        <a class="merchant-link" href="http://emis.meishi.meituan.com/merchantsSettled" target="_blank">商家入驻</a>
+       </div>
+       <div class="banner-row clearfix">
+        <div class="item banner-slider shadow">
+         <div class="slider" id="banner-slider">
+          <div class="slider-content clearfix" style="width: 2200px;">
+           <div class="slider-item" style="width: 550px; left: 0px; z-index: 50; opacity: 1; transition: opacity 0.5s ease 0s;">
+            <a href="http://sy.meituan.com/meishi/" target="_blank">
+             <div class="slider-img-div" style='background-image: url("/static/index/1.jpg");'></div></a>
+           </div>
+           <div class="slider-item" style="width: 550px; left: -550px; z-index: 9; opacity: 0; transition: opacity 0.5s ease 0s;">
+            <a href="http://waimai.meituan.com/" target="_blank">
+             <div class="slider-img-div" style='background-image: url("/static/index/2.jpg");'></div></a>
+           </div>
+           <div class="slider-item" style="width: 550px; left: -1100px; z-index: 9; opacity: 0; transition: opacity 0.5s ease 0s;">
+            <a href="http://maoyan.com/" target="_blank">
+             <div class="slider-img-div" style='background-image: url("/static/index/3.jpg");'></div></a>
+           </div>
+           <div class="slider-item" style="width: 550px; left: -1650px; z-index: 9; opacity: 0; transition: opacity 0.5s ease 0s;">
+            <a href="http://hotel.meituan.com/" target="_blank">
+             <div class="slider-img-div" style='background-image: url("/static/index/4.jpg");'></div></a>
+           </div>
+          </div>
+		  <script>
+			$(document).ready(function(){
+				$(".pagination").mouseenter(function(){
+					var index=$(this).index();
+					$(this).css("opacity","0.9").siblings().css("opacity","0.2");
+					$(".slider-item").eq(index).css({"z-index":"50","opacity":"1"}).siblings().css({"z-index":"9","opacity":"0"});
+				});
+			});
+		  </script>
+          <div class="slider-pagination" id="banner-sliderpage" style="margin-left: -35px;">
+           <div class="pagination" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; opacity: 0.9;"></div>
+           <div class="pagination" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; opacity: 0.2;"></div>
+           <div class="pagination" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; opacity: 0.2;"></div>
+           <div class="pagination" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; opacity: 0.2;"></div>
+          </div>
+          <div class="btn btn-next" style="display: block;">
+           <i class="iconfont icon-btn_right"></i>
+          </div>
+          <div class="btn btn-pre" style="display: block;">
+           <i class="iconfont icon-btn_left"></i>
+          </div>
+         </div>
+        </div>
+        <a href="http://sy.meituan.com/xiuxianyule/" target="_blank">
+         <div class="item shadow pic-1" style="background-image: url('/static/index/xxsh.jpg');"></div></a>
+        <div class="item banner-logincard">
+         <div style="float: left;">
+          <!-------------- geekori.com 用户登录--------------->
+          <div class="login-container" id="user">
+
+           <div class="default" v-if="username==='未登录'">
+            <div class="head-img-row">
+             <img src="/static/index/a.jpg" alt="" />
+            </div>
+            <p class="user-name">Hi！你好</p>
+            <a class="btn-login" href="/toregister">注册</a>
+            <a class="btn-login" href="/tologin">立即登录</a>
+           </div>
+
+           <div class="default" v-else>
+            <div class="setting">
+             <a href="http://www.meituan.com/account/settings" target="_blank">
+              <div class="icon">
+               <i class="iconfont icon-setting_iconx"></i>
+              </div></a>
+             <a href="http://www.meituan.com/message/messages" target="_blank">
+              <div class="icon">
+               <i class="iconfont icon-message_iconx"></i>
+              </div></a>
+            </div>
+            <div class="head-img-row">
+             <a href="http://www.meituan.com/account/userexinfo" target="_blank"><img src="/static/index/a.jpg" alt="" /></a>
+            </div>
+            <div class="nickname-row">
+             <a href="/topersonal" target="_blank"><p class="user-name">{{username}}</p></a>
+             <!--<a href="http://www.meituan.com/account/growth" target="_blank"><i class="iconfont iconfont_level icon-lable_level_undefined"></i></a>-->
+            </div>
+            <div class="fn-row clearfix">
+             <div class="fn-item">
+              <a href="trade.htm" target="_blank">
+               <div class="icon">
+                <i class="iconfont icon-order_iconx"></i>
+               </div><p class="fn-name">我的订单</p></a>
+             </div>
+             <div class="fn-item">
+              <a href="http://www.meituan.com/rates/" target="_blank">
+               <div class="icon">
+                <i class="iconfont icon-comment_iconx"></i>
+               </div><p class="fn-name">我的评价</p></a>
+             </div>
+             <div class="fn-item">
+              <a href="http://www.meituan.com/collections/" target="_blank">
+               <div class="icon">
+                <i class="iconfont icon-collection_iconx"></i>
+               </div><p class="fn-name">我的收藏</p></a>
+             </div>
+            </div>
+            <div class="fn-row clearfix">
+             <div class="fn-item">
+              <a href="http://www.meituan.com/card/list" target="_blank">
+               <div class="icon">
+                <i class="iconfont icon-ticket_iconx"></i>
+               </div><p class="fn-name">抵用券</p></a>
+             </div>
+             <div class="fn-item">
+              <a href="http://www.meituan.com/account/credit" target="_blank">
+               <div class="icon">
+                <i class="iconfont icon-money_iconx"></i>
+               </div><p class="fn-name">余额</p></a>
+             </div>
+             <div class="fn-item">
+              <a href="http://www.meituan.com/account/growth" target="_blank">
+               <div class="icon">
+                <i class="iconfont icon-more_iconx"></i>
+               </div><p class="fn-name">更多</p></a>
+             </div>
+            </div>
+           </div>
+           <!-------------- www.geekori.com 用户登录结束--------------->
+
+
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="banner-row clearfix">
+        <a href="http://sy.meituan.com/category/" target="_blank">
+         <div class="item pic-2 shadow" style="background-image: url('/static/index/bdtg.jpg');"></div></a>
+        <a href="http://sy.meituan.com/category/new" target="_blank">
+         <div class="item pic-3 shadow" style="background-image: url('/static/index/new.jpg');"></div></a>
+        <a href="http://emis.meishi.meituan.com/merchantsSettled" target="_blank">
+         <div class="item pic-4 shadow" style="background-image: url('/static/index/wssj.jpg');"></div></a>
+        <div class="item download-app">
+         <div class="qrcode-box">
+          <img src="/static/index/a_006.png" alt="下载APP" />
+         </div>
+         <p class="app-name">美团APP手机版</p>
+         <p class="sl"><span class="red">1元起</span><span class="gary">吃喝玩乐</span></p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="scenes-container">
+      <div class="quality-container">
+       <div class="index-nav-container undefined" style="background-color: rgb(190, 164, 116); background-image: linear-gradient(to right, rgb(194, 176, 142) 3%, rgb(190, 164, 116) 100%);">
+        <ul class="clearfix ">
+         <li class="title nav-item mf-shang-hei-regular">有格调</li>
+         <li class="nav-item active">全部</li>
+         <li class="nav-item">约会聚餐</li>
+         <li class="nav-item">丽人spa</li>
+         <li class="nav-item">电影演出</li>
+         <li class="nav-item">品质出游</li>
+        </ul>
+       </div>
+       <div class="quality-area clearfix">
+        <a href="http://www.meituan.com/jiudian/68084482/" class="link quality-card" target="_blank">
+         <div class="quality-img">
+          <img src="/static/index/70951e74ec35603af91315bce7709bd2163879.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="沈阳瑞心城市国际酒店">
+           沈阳瑞心城市国际酒店
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">
+             <!-- react-text: 1971 -->228
+             <!-- /react-text --><span class="current-price-type">
+              <!-- react-text: 1973 -->/
+              <!-- /react-text -->
+              <!-- react-text: 1974 -->起
+              <!-- /react-text --></span></span></span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/jiankangliren/50168315/" class="link quality-card" target="_blank">
+         <div class="quality-img">
+          <img src="/static/index/1bb77606600398111a615497b57aa43d164114.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="阿三造型（太原北街店）">
+           阿三造型（太原北街店）
+          </div>
+          <div class="sub-title" title="阿三造型（太原北街店）">
+           阿三造型（太原北街店）
+          </div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">
+             <!-- react-text: 1985 -->72
+             <!-- /react-text --><span class="current-price-type">
+              <!-- react-text: 1987 -->/
+              <!-- /react-text -->
+              <!-- react-text: 1988 -->人均
+              <!-- /react-text --></span></span></span>
+           <span class="sold bottom-right-info">太原街</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/248750/" class="link quality-card" target="_blank">
+         <div class="quality-img">
+          <img src="/static/index/007d222f9b6a1aad5b39f8bc8f32b64569630.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="阿尔卑斯比萨自助（太原街万达店）">
+           阿尔卑斯比萨自助（太原街万达店）
+          </div>
+          <div class="sub-title"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">
+             <!-- react-text: 2000 -->42.8
+             <!-- /react-text --></span></span>
+           <span class="old-price">门市价&yen;68</span>
+           <span class="sold bottom-right-info">万达广场</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/93784620/" class="link quality-card" target="_blank">
+         <div class="quality-img">
+          <img src="/static/index/165fefcdf4ba9a6239f5cd086790490680503.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="初客牛排">
+           初客牛排
+          </div>
+          <div class="sub-title"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">
+             <!-- react-text: 2013 -->39
+             <!-- /react-text --></span></span>
+           <span class="old-price">门市价&yen;49</span>
+           <span class="sold bottom-right-info">浑南区</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/shop/1433391/" class="link quality-card" target="_blank">
+         <div class="quality-img">
+          <img src="/static/index/3_1213185536.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="耀莱成龙国际影城(三好街店)">
+           耀莱成龙国际影城(三好街店)
+          </div>
+          <div class="sub-title" title="免押金,可停车,儿童票,可刷卡,有WIFI,休息区">
+           免押金,可停车,儿童票,可刷卡,有WIFI,休息区
+          </div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">
+             <!-- react-text: 2026 -->17.9
+             <!-- /react-text --><span class="current-price-type">
+              <!-- react-text: 2028 -->/
+              <!-- /react-text -->
+              <!-- react-text: 2029 -->人均
+              <!-- /react-text --></span></span></span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/shop/1513522/" class="link quality-card" target="_blank">
+         <div class="quality-img">
+          <img src="/static/index/__36308610__8365534.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="华谊兄弟影院(星摩尔店)">
+           华谊兄弟影院(星摩尔店)
+          </div>
+          <div class="sub-title" title="免押金,可停车,儿童票,可刷卡,有WIFI,休息区">
+           免押金,可停车,儿童票,可刷卡,有WIFI,休息区
+          </div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">
+             <!-- react-text: 2040 -->0
+             <!-- /react-text --><span class="current-price-type">
+              <!-- react-text: 2042 -->/
+              <!-- /react-text -->
+              <!-- react-text: 2043 -->人均
+              <!-- /react-text --></span></span></span>
+          </div>
+         </div></a>
+       </div>
+      </div>
+      <div class="offer-container">
+       <div class="index-nav-container undefined" style="background-color: rgb(190, 164, 116); background-image: linear-gradient(to right, rgb(255, 113, 74) 2%, rgb(252, 66, 66) 97%);">
+        <ul class="clearfix ">
+         <li class="title nav-item mf-shang-hei-regular">狠优惠</li>
+         <li class="nav-item">全部</li>
+         <li class="nav-item active">美食</li>
+         <li class="nav-item">电影</li>
+         <li class="nav-item">休娱</li>
+        </ul>
+       </div>
+       <div class="cheap-area clearfix">
+        <a href="http://www.meituan.com/meishi/41416845/" class="link cheap-card" target="_blank">
+         <div class="cheap-img">
+          <img src="/static/index/7b4f51a65f0b088f2ae63c5dd96324db137892.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="东北印象">
+           东北印象
+          </div>
+          <div class="sub-title" title="[万达广场]东北溜肉段1份，提供免费WiFi">
+           [万达广场]东北溜肉段1份，提供免费WiFi
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">1</span></span>
+           <span class="old-price">美团价&yen;39</span>
+           <span class="sold">已售3065</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/41416845/" class="link cheap-card" target="_blank">
+         <div class="cheap-img">
+          <img src="/static/index/75923a3c26c14307aa49e19e055e731170450.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="东北印象">
+           东北印象
+          </div>
+          <div class="sub-title" title="[万达广场]水煮肉片1份，提供免费WiFi">
+           [万达广场]水煮肉片1份，提供免费WiFi
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">1</span></span>
+           <span class="old-price">美团价&yen;38</span>
+           <span class="sold">已售1102</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/1930517/" class="link cheap-card" target="_blank">
+         <div class="cheap-img">
+          <img src="/static/index/799f4073bf0ad733e1deb75daddd5457162679.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="福明川烧烤">
+           福明川烧烤
+          </div>
+          <div class="sub-title" title="[2店通用]20元代金券1张，全场通用">
+           [2店通用]20元代金券1张，全场通用
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">1</span></span>
+           <span class="old-price">美团价&yen;20</span>
+           <span class="sold">已售8857</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/52615033/" class="link cheap-card" target="_blank">
+         <div class="cheap-img">
+          <img src="/static/index/b2d750a37777c587c29cc584dac18cf377952.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="西萨西饼店">
+           西萨西饼店
+          </div>
+          <div class="sub-title" title="[11店通用]仅售118元！价值2016元的水果蛋糕1个+青春格调1个等。">
+           [11店通用]仅售118元！价值2016元的水果蛋糕1个+青春格调1个等。
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">118</span></span>
+           <span class="old-price">美团价&yen;2016</span>
+           <span class="sold">已售17</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/41750921/" class="link cheap-card" target="_blank">
+         <div class="cheap-img">
+          <img src="/static/index/96e7140fbfb04fff136bca1d526a519265727.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="pretty cafe 靓咖啡酒吧">
+           pretty cafe 靓咖啡酒吧
+          </div>
+          <div class="sub-title" title="[南市/马路湾]美式咖啡1份，提供免费WiFi">
+           [南市/马路湾]美式咖啡1份，提供免费WiFi
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">1</span></span>
+           <span class="old-price">美团价&yen;18</span>
+           <span class="sold">已售85</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/83602956/" class="link cheap-card" target="_blank">
+         <div class="cheap-img">
+          <img src="/static/index/7d115f7c389da46f2c2c6d6e6a15982279008.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="味优美八喜蛋糕店">
+           味优美八喜蛋糕店
+          </div>
+          <div class="sub-title" title="[20店通用]仅售138元！价值1990元的八喜冰淇淋蛋糕1个+八喜冰淇淋A款1个等。">
+           [20店通用]仅售138元！价值1990元的八喜冰淇淋蛋糕1个+八喜冰淇淋A款1个等。
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">138</span></span>
+           <span class="old-price">美团价&yen;1990</span>
+           <span class="sold">已售173</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/42018025/" class="link cheap-card" target="_blank">
+         <div class="cheap-img">
+          <img src="/static/index/24c7cbcaa6f64f3d0cc7b36272a1770064720.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="都市人生态园">
+           都市人生态园
+          </div>
+          <div class="sub-title" title="[浑南区]特价店庆双人套餐">
+           [浑南区]特价店庆双人套餐
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">9.9</span></span>
+           <span class="old-price">美团价&yen;106</span>
+           <span class="sold">已售42</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/4008335/" class="link cheap-card" target="_blank">
+         <div class="cheap-img">
+          <img src="/static/index/9bd73fccb330ecf46a3fad4fd8ff6cf724588.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="韵夏咖啡馆">
+           韵夏咖啡馆
+          </div>
+          <div class="sub-title" title="[南市/马路湾]20元代金券1张，全场通用">
+           [南市/马路湾]20元代金券1张，全场通用
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">1.9</span></span>
+           <span class="old-price">美团价&yen;20</span>
+           <span class="sold">已售99</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/98246401/" class="link cheap-card" target="_blank">
+         <div class="cheap-img">
+          <img src="/static/index/98fbd9b66e051ee8ce0dced4871dd72b58895.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="克莱斯汀">
+           克莱斯汀
+          </div>
+          <div class="sub-title" title="[10店通用]仅售368元！价值2840元的蟠桃会三层蛋糕（14+10+桃）1+仙桃贺寿（14+10+桃）1等。">
+           [10店通用]仅售368元！价值2840元的蟠桃会三层蛋糕（14+10+桃）1+仙桃贺寿（14+10+桃）1等。
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">368</span></span>
+           <span class="old-price">美团价&yen;2840</span>
+           <span class="sold">已售134</span>
+          </div>
+         </div></a>
+        <a href="http://www.meituan.com/meishi/40131915/" class="link cheap-card" target="_blank">
+         <div class="cheap-img">
+          <img src="/static/index/6eb22408c3aefa93db44ad37d650686069525.jpg" class="image" />
+         </div>
+         <div class="poi-info">
+          <div class="title" title="蜜思Cake">
+           蜜思Cake
+          </div>
+          <div class="sub-title" title="[6店通用]蛋糕6选1,约8英寸，圆/方">
+           [6店通用]蛋糕6选1,约8英寸，圆/方
+          </div>
+          <div class="tags-wrapper clearfix"></div>
+          <div class="price-info">
+           <span class="current-price-wrapper"><span class="price-symbol numfont">&yen;</span><span class="current-price numfont">98</span></span>
+           <span class="old-price">美团价&yen;708</span>
+           <span class="sold">已售16</span>
+          </div>
+         </div></a>
+       </div>
+      </div>
+     </div>
+     <div class="maoyan-container">
+      <div class="index-nav-container undefined" style="background: rgb(250, 60, 104) linear-gradient(to right, rgb(250, 60, 104) 2%, rgb(254, 70, 77) 97%) repeat scroll 0% 0%;">
+       <ul class="clearfix ">
+        <li class="title nav-item mf-shang-hei-regular">猫眼电影</li>
+        <li class="nav-item active">正在热映</li>
+        <li class="nav-item">即将上映</li>
+        <li class="total nav-item"><a href="http://maoyan.com/" target="_blank"><span>全部</span><span class="right-arrow iconfont icon-btn_right"></span></a></li>
+       </ul>
+      </div>
+      <div class="scenes-body">
+       <div class="hot-container" style="display: block;">
+        <div>
+         <div class="slider">
+          <div class="slider-content clearfix" style="left: 0px; margin: 0px 12px;">
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/342598"><img src="/static/index/782099c2b840b890150913d01ddfd7db5144766.jpg" class="image film-img" /><img src="/static/index/a_005.png" class="film-mark" style="display: inline-block;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b>
+                <!-- react-text: 1058 -->观众评 
+                <!-- /react-text --><span>8.1</span></b></p><p class="film-name">敦刻尔克</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/342598">购票</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/1144681"><img src="/static/index/f6915bebf74da3613e21772218191c30440943.png" class="image film-img" /><img class="film-mark" style="display: none;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b>
+                <!-- react-text: 1069 -->观众评 
+                <!-- /react-text --><span>7.9</span></b></p><p class="film-name">银魂 真人版</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/1144681">购票</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/334620"><img src="/static/index/4871b40136f0dbb316605ed3ec4333db497541.jpg" class="image film-img" /><img src="/static/index/a_007.png" class="film-mark" style="display: inline-block;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>466283</span>
+                <!-- react-text: 1081 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">蜘蛛侠：英雄归来</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/334620">预售</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/344264"><img src="/static/index/02ac72c0e8ee2987f7662ad921a2acc7999433.jpg" class="image film-img" /><img src="/static/index/a_005.png" class="film-mark" style="display: inline-block;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b>
+                <!-- react-text: 1091 -->观众评 
+                <!-- /react-text --><span>9.7</span></b></p><p class="film-name">战狼2</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/344264">购票</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/249008"><img src="/static/index/41ebecd825ffe37afd93687d480de1f1639738.png" class="image film-img" /><img src="/static/index/a_007.png" class="film-mark" style="display: inline-block;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b>
+                <!-- react-text: 1102 -->观众评 
+                <!-- /react-text --><span>8.3</span></b></p><p class="film-name">星际特工：千星之城</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/249008">购票</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/246377"><img src="/static/index/3a43190977fc2db6749a4bb8f1c0fd99471129.jpg" class="image film-img" /><img src="/static/index/a_007.png" class="film-mark" style="display: inline-block;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>342104</span>
+                <!-- react-text: 1114 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">猩球崛起3：终极之战</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/246377">预售</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/346167"><img src="/static/index/ab6c0f3a62a9cdd577cbc344cc88de87148223.jpg" class="image film-img" /><img class="film-mark" style="display: none;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b>
+                <!-- react-text: 1124 -->观众评 
+                <!-- /react-text --><span>7.4</span></b></p><p class="film-name">黑白迷宫</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/346167">购票</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/342067"><img src="/static/index/2b73d01ae68a1972f7f3e235127c8bb9723265.jpg" class="image film-img" /><img src="/static/index/a_005.png" class="film-mark" style="display: inline-block;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b>
+                <!-- react-text: 1135 -->观众评 
+                <!-- /react-text --><span>8.7</span></b></p><p class="film-name">赛车总动员3：极速挑战</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/342067">购票</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/349452"><img src="/static/index/36763805c544e93160d0df74b612f5e9622163.jpg" class="image film-img" /><img class="film-mark" style="display: none;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>43902</span>
+                <!-- react-text: 1147 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">声之形</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/349452">预售</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/342176"><img src="/static/index/4ddfd25f99b14400c6bbbca62beffa10214626.jpg" class="image film-img" /><img class="film-mark" style="display: none;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b>
+                <!-- react-text: 1157 -->观众评 
+                <!-- /react-text --><span>8.5</span></b></p><p class="film-name">杀破狼&middot;贪狼</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/342176">购票</a>
+            </div>
+           </div>
+          </div>
+          <div class="btn btn-next" style="right: 0px;">
+           <i class="iconfont icon-btn_right"></i>
+          </div>
+          <div class="btn btn-pre" style="left: 0px;">
+           <i class="iconfont icon-btn_left"></i>
+          </div>
+         </div>
+         <div class="slider-pagination" id="maoyan-page" style="margin-left: -15px;">
+          <div class="pagination" style="opacity: 0.9;"></div>
+          <div class="pagination" style="opacity: 0.2;"></div>
+         </div>
+        </div>
+       </div>
+       <div class="coming-container" style="display: none;">
+        <div>
+         <div class="slider">
+          <div class="slider-content clearfix" style="left: 0px; margin: 0px 12px;">
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/334620"><img src="/static/index/4871b40136f0dbb316605ed3ec4333db497541.jpg" class="image film-img" /><img src="/static/index/a_007.png" class="film-mark" style="display: inline-block;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>466283</span>
+                <!-- react-text: 1180 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">蜘蛛侠：英雄归来</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/334620">预售</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/349452"><img src="/static/index/36763805c544e93160d0df74b612f5e9622163.jpg" class="image film-img" /><img class="film-mark" style="display: none;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>43902</span>
+                <!-- react-text: 1191 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">声之形</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/349452">预售</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/197420"><img src="/static/index/5024a193d82cbb7a84239dd0def17c3b855035.jpg" class="image film-img" /><img class="film-mark" style="display: none;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>15892</span>
+                <!-- react-text: 1202 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">失业生</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/197420">预售</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/1136560"><img src="/static/index/5414ae8f4ab22abbd8979d56132858c52284197.jpg" class="image film-img" /><img class="film-mark" style="display: none;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>7239</span>
+                <!-- react-text: 1213 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">蜜月计划</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/1136560">预售</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/1208030"><img src="/static/index/5743d64b30e74a542051fc88fd6a2316104006.jpg" class="image film-img" /><img class="film-mark" style="display: none;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>3914</span>
+                <!-- react-text: 1224 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">诡域新娘</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/1208030">预售</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/367991"><img src="/static/index/ea105a266fe254e9672d933204d11c63267700.jpg" class="image film-img" /><img class="film-mark" style="display: none;" />
+             <div class="film-info">
+              <p class="film-score"><b><span>1113</span>
+                <!-- react-text: 1235 --> 人想看
+                <!-- /react-text --></b></p>
+              <p class="film-name">猪太狼的夏天</p>
+             </div></a>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/1208673"><img src="/static/index/cddaaca2e507917cfa4d60d03cfde57e486754.png" class="image film-img" /><img class="film-mark" style="display: none;" />
+             <div class="film-info">
+              <p class="film-score"><b><span>22</span>
+                <!-- react-text: 1245 --> 人想看
+                <!-- /react-text --></b></p>
+              <p class="film-name">逆生&middot;致亲爱的小孩</p>
+             </div></a>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/1204052"><img src="/static/index/9b57ae0bdc2ddcbea51d8e0d7118857d5020142.jpg" class="image film-img" /><img class="film-mark" style="display: none;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>1398</span>
+                <!-- react-text: 1255 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">怪物岛</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/1204052">预售</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/1208118"><img src="/static/index/84ae9e27f3dcf5f5a03560c41c5dcb54767962.png" class="image film-img" /><img class="film-mark" style="display: none;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>752</span>
+                <!-- react-text: 1266 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">乔乔的魔法</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/1208118">预售</a>
+            </div>
+           </div>
+           <div class="slider-item-film">
+            <a target="_blank" href="http://maoyan.com/films/246377"><img src="/static/index/3a43190977fc2db6749a4bb8f1c0fd99471129.jpg" class="image film-img" /><img src="/static/index/a_007.png" class="film-mark" style="display: inline-block;" /></a>
+            <div class="film-info">
+             <a><p class="film-score"><b><span>342104</span>
+                <!-- react-text: 1277 --> 人想看
+                <!-- /react-text --></b></p><p class="film-name">猩球崛起3：终极之战</p></a>
+             <a class="buy-ticket" target="_blank" href="http://maoyan.com/films/246377">预售</a>
+            </div>
+           </div>
+          </div>
+          <div class="btn btn-next" style="right: 0px;">
+           <i class="iconfont icon-btn_right"></i>
+          </div>
+          <div class="btn btn-pre" style="left: 0px;">
+           <i class="iconfont icon-btn_left"></i>
+          </div>
+         </div>
+         <div class="slider-pagination" id="maoyan-page" style="margin-left: -15px;">
+          <div class="pagination" style="opacity: 0.9;"></div>
+          <div class="pagination" style="opacity: 0.2;"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="recommend-container">
+      <div class="index-nav-container undefined" style="background: rgb(18, 210, 198) linear-gradient(to right, rgb(18, 210, 198) 2%, rgb(14, 190, 212) 97%) repeat scroll 0% 0%;">
+       <ul class="clearfix ">
+        <li class="title nav-item mf-shang-hei-regular">猜你喜欢</li>
+        <li class="nav-item active">为你甄选最适合的</li>
+       </ul>
+      </div>
+      <div class="recommend-list">
+       <a href="http://www.meituan.com/meishi/103086743/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/ae80ef9e610045db2d1cf282cd4a3e79198890.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="波波'S蛋糕店（道义店）">
+            波波'S蛋糕店（道义店）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1302 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1327 -->138
+             <!-- /react-text -->
+             <!-- react-text: 1328 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             正良
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">9.3</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/xiuxianyule/248928/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/5fa05f875db7c1d5902d5ee0a304337c110133.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="大玩家（太原街万达店）">
+            大玩家（太原街万达店）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1346 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 98%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1371 -->9131
+             <!-- /react-text -->
+             <!-- react-text: 1372 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             万达广场
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">69.9</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/meishi/74390083/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/3d60964a409c6dbaa5cee21e6d7c264487326.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="熊喵来了萌火锅（万达店）">
+            熊喵来了萌火锅（万达店）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1390 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1415 -->1568
+             <!-- /react-text -->
+             <!-- react-text: 1416 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             沈辽路万达
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">98.0</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/meishi/99406329/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/4460a4ecb6e7ecb762aeed6a8581913b62995.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="妈妈米线（奥体万达店）">
+            妈妈米线（奥体万达店）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1434 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1459 -->2029
+             <!-- /react-text -->
+             <!-- react-text: 1460 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             奥体中心
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">29.8</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/meishi/250546/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/3f4cf380aec5308d467b017f873b92bd85072.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="彤德莱火锅（十三纬路新形象店）">
+            彤德莱火锅（十三纬路新形象店）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1478 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1503 -->2084
+             <!-- /react-text -->
+             <!-- react-text: 1504 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             彩电塔
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">72.0</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/meishi/2416552/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/096e0083240d7a53ee856f94c998342a132179.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="美国加州牛肉面（兴工店）">
+            美国加州牛肉面（兴工店）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1522 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1547 -->8453
+             <!-- /react-text -->
+             <!-- react-text: 1548 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             沈阳站西广场
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">11.9</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/xiuxianyule/112205392/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/-1176711012983679738.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="浴乐汤温泉洗浴汗蒸休闲酒店">
+            浴乐汤温泉洗浴汗蒸休闲酒店
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1566 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1591 -->4494
+             <!-- /react-text -->
+             <!-- react-text: 1592 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             云峰街
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">19.0</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/meishi/1173833/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/3_0423180003.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="比尔森健康烤肉">
+            比尔森健康烤肉
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1610 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1635 -->40449
+             <!-- /react-text -->
+             <!-- react-text: 1636 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned"></div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">55.9</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/xiuxianyule/152362914/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/_0726131245.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="千沐温泉洗浴">
+            千沐温泉洗浴
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1653 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1678 -->416
+             <!-- /react-text -->
+             <!-- react-text: 1679 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             财富广场
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">15.0</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/xiuxianyule/104959143/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/73bd824cba760dda4847a4918fa38423193112.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="私人订制主题量贩ktv（沈辽路店）">
+            私人订制主题量贩ktv（沈辽路店）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1697 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1722 -->3971
+             <!-- /react-text -->
+             <!-- react-text: 1723 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             沈辽路万达
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">49.0</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/meishi/106549720/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/fbcc03728161471a59e8b7a09aa6e914136959.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="泰芒了（太原街万达店）">
+            泰芒了（太原街万达店）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1741 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1766 -->2659
+             <!-- /react-text -->
+             <!-- react-text: 1767 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             万达广场
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">13.9</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/xiuxianyule/40538248/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/-4001524974794967136.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="大江户（浑南馆）">
+            大江户（浑南馆）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1785 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1810 -->8651
+             <!-- /react-text -->
+             <!-- react-text: 1811 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned"></div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">10.0</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/meishi/92250546/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/8b782b625af563ef97506a66efafb15c257840.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="鸭爪侠&middot;Hi锅（北一路万达店）">
+            鸭爪侠&middot;Hi锅（北一路万达店）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1828 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1853 -->2947
+             <!-- /react-text -->
+             <!-- react-text: 1854 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             北一路万达
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">68.0</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/meishi/5542814/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/508e4741a1d6375f354e9e529c58f8cd267w_150h_1e_1c.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="Amore Pizza（华府店）">
+            Amore Pizza（华府店）
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1872 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1897 -->5261
+             <!-- /react-text -->
+             <!-- react-text: 1898 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             北站/市府
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">89.0</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+       <a href="http://www.meituan.com/xiuxianyule/152323260/" class="link link recommend-item" target="_blank">
+        <div class="card-container">
+         <div class="recommend-card-wrapper">
+          <div class="img-box">
+           <img src="/static/index/1289271369843286744-4231431-1497321127484.jpg" class="image" />
+          </div>
+          <div class="info-box">
+           <div class="title aligned" title="韩帝园汗蒸时代">
+            韩帝园汗蒸时代
+           </div>
+           <div class="score-line aligned">
+            <div class="score">
+             <!-- react-text: 1916 --> 
+             <!-- /react-text -->
+             <div class="rate-stars">
+              <ul class="rate-stars-ul rate-stars-dark">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+              <ul class="rate-stars-ul rate-stars-light" style="width: 100%;">
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+               <li><i class="iconfont icon-star_icon"></i></li>
+              </ul>
+             </div>
+            </div>
+            <div class="comment-number">
+             <!-- react-text: 1941 -->1153
+             <!-- /react-text -->
+             <!-- react-text: 1942 -->个评价
+             <!-- /react-text -->
+            </div>
+           </div>
+           <div class="desc-line aligned">
+            <div class="desc">
+             韩帝园朝鲜族文化产业园
+            </div>
+           </div>
+           <div class="bottom-line aligned">
+            <div class="price-box">
+             <span><span class="yuan">￥</span><span class="price-number numfont">9.0</span><span class="price-desc">起</span></span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div></a>
+      </div>
+     </div>
+     <nav class="botton-nav">
+      <div class="title">
+       美团导航
+      </div>
+      <dl class="b-n-content">
+       <div class="b-n-classification">
+        <dt class="b-n-subtitle">
+         热门城市
+        </dt>
+        <div class="b-n-sublist">
+         <dd class="b-n-list-item">
+          <a href="http://gy.meituan.com/" title="贵阳" target="_blank">贵阳</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://wh.meituan.com/" title="武汉" target="_blank">武汉</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://zz.meituan.com/" title="郑州" target="_blank">郑州</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/" title="沈阳" target="_blank">沈阳</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://fs.meituan.com/" title="佛山" target="_blank">佛山</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://tj.meituan.com/" title="天津" target="_blank">天津</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://jn.meituan.com/" title="济南" target="_blank">济南</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://chs.meituan.com/" title="长沙" target="_blank">长沙</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://hrb.meituan.com/" title="哈尔滨" target="_blank">哈尔滨</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://cd.meituan.com/" title="成都" target="_blank">成都</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://nn.meituan.com/" title="南宁" target="_blank">南宁</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://xm.meituan.com/" title="厦门" target="_blank">厦门</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sjz.meituan.com/" title="石家庄" target="_blank">石家庄</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sz.meituan.com/" title="深圳" target="_blank">深圳</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://su.meituan.com/" title="苏州" target="_blank">苏州</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://nb.meituan.com/" title="宁波" target="_blank">宁波</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://cz.meituan.com/" title="常州" target="_blank">常州</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://gz.meituan.com/" title="广州" target="_blank">广州</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://cq.meituan.com/" title="重庆" target="_blank">重庆</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://nj.meituan.com/" title="南京" target="_blank">南京</a>
+         </dd>
+        </div>
+       </div>
+       <div class="b-n-classification">
+        <dt class="b-n-subtitle">
+         热门分类
+        </dt>
+        <div class="b-n-sublist">
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/meishi/" title="美食" target="_blank">美食</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/xiuxianyule/" title="休闲娱乐" target="_blank">休闲娱乐</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/yundongjianshen/" title="运动健身" target="_blank">运动健身</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/shenghuo/" title="生活服务" target="_blank">生活服务</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/shangmenfuwu/" title="上门服务" target="_blank">上门服务</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/wanggou/" title="购物" target="_blank">购物</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/shishanggou/" title="时尚购" target="_blank">时尚购</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/bendigouwu/" title="本地购物" target="_blank">本地购物</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/jiehun/" title="结婚" target="_blank">结婚</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/sheyingxiezhen/" title="摄影写真" target="_blank">摄影写真</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/yanhui/" title="宴会" target="_blank">宴会</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/jiankangliren/" title="丽人" target="_blank">丽人</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/qinzi/" title="母婴亲子" target="_blank">母婴亲子</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/xuexipeixun/" title="学习培训" target="_blank">学习培训</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/jiazhuang/" title="家装" target="_blank">家装</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/aiche/" title="汽车服务" target="_blank">汽车服务</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/yiliao/" title="医疗" target="_blank">医疗</a>
+         </dd>
+         <dd class="b-n-list-item">
+          <a href="http://sy.meituan.com/chongwu/" title="宠物" target="_blank">宠物</a>
+         </dd>
+        </div>
+       </div>
+      </dl>
+     </nav>
+    </div>
+    <footer class="com-footer">
+     <div class="footer-content">
+      <div class="footer-link clearfix">
+       <div class="footer-column">
+        <dl>
+         <dt>
+          用户帮助
+         </dt>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/commitment/" target="_blank">美团承诺</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/commitment/delivery" target="_blank">购物保障</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/help/selfservice" target="_blank">申请退款</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/help/selfservice?tab=2" target="_blank">查看美团券密码</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/help/faq" target="_blank">常见问题</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/about/terms" target="_blank">用户协议</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/about/privacy" target="_blank">隐私政策</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/about/anticheat" target="_blank">反诈骗公告</a>
+         </dd>
+        </dl>
+        <dl>
+         <dt>
+          美团服务
+         </dt>
+         <dd>
+          <a rel="nofollow" href="http://waimai.meituan.com/" target="_blank">美团外卖</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://maoyan.com/" target="_blank">猫眼电影</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="https://www.mtyun.com/" target="_blank">美团云</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.dianping.com/" target="_blank">大众点评</a>
+         </dd>
+        </dl>
+       </div>
+       <div class="footer-column">
+        <dl>
+         <dt>
+          商家合作
+         </dt>
+         <dd>
+          <a rel="nofollow" href="https://emismeishi.meituan.com/m/bizSettle/intro" target="_blank">美食商家入驻（非外卖）</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://kaidian.waimai.meituan.com/open_store/welcome?source=7" target="_blank">外卖商家入驻</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://ruzhu.meituan.com/ruzhu/index.html" target="_blank">酒店商家入驻</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://e.dianping.com/shopclaim/introduce/introducelogin" target="_blank">综合商家入驻</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://i.meituan.com/awp/app/menuorder-ecom/orderapplywelcome.html?activity_code=MTPCSWHZ" target="_blank">点餐秒付合作申请</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://shouyin.meituan.com/home" target="_blank">美团点评智能收银机</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://developer.meituan.com/" target="_blank">聚宝盆餐饮开放平台</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://smartpay.meituan.com/" target="_blank">美团智能支付</a>
+         </dd>
+        </dl>
+       </div>
+       <div class="footer-column">
+        <dl>
+         <dt>
+          代理商加盟
+         </dt>
+         <dd>
+          <a rel="nofollow" href="http://daili.meituan.com/" target="_blank">到店餐饮代理商招募</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.dianping.com/apollo/agent/index?source=mtpcd" target="_blank">非餐饮代理商招募</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://union.meituan.com/" target="_blank">美团联盟</a>
+         </dd>
+        </dl>
+        <dl>
+         <dt>
+          行业规范
+         </dt>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/about/saferule" target="_blank">美团点评餐饮安全管理办法</a>
+         </dd>
+        </dl>
+        <dl>
+         <dt>
+          廉正举报
+         </dt>
+         <dd>
+          <a rel="nofollow" href="mailto:lianzheng@meituan.com">廉正邮箱</a>
+         </dd>
+        </dl>
+       </div>
+       <div class="footer-column">
+        <dl>
+         <dt>
+          关注美团
+         </dt>
+         <dd>
+          <a rel="nofollow" href="http://weibo.com/meituan" target="_blank">美团新浪微博</a>
+         </dd>
+        </dl>
+        <dl>
+         <dt>
+          关于美团
+         </dt>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/about/press" target="_blank">媒体报道</a>
+         </dd>
+        </dl>
+        <dl>
+         <dt>
+          公司信息
+         </dt>
+         <dd>
+          <a rel="nofollow" href="http://zhaopin.meituan.com/" target="_blank">加入我们</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/about/law" target="_blank">法律声明</a>
+         </dd>
+         <dd>
+          <a rel="nofollow" href="http://www.meituan.com/about/bizlicense" target="_blank">商户服务协议</a>
+         </dd>
+        </dl>
+       </div>
+       <div class="footer-phone-block">
+        <p class="footer-title">客服电话</p>
+        <p class="footer-phone">10107888</p>
+        <p class="footer-time">（9:00-23:00）</p>
+       </div>
+      </div>
+      <div class="footer-copyright clearfix">
+       <div class="footer-copyright-left">
+        <p>
+         <!-- react-text: 986 -->&copy;美团网团购 meituan.com 
+         <!-- /react-text --><a href="http://www.beianbeian.com/beianxinxi/283f39a9-4c00-427a-97ef-3c7a9e1e0af1.html">京ICP证070791号</a>
+         <!-- react-text: 988 --> | 
+         <!-- /react-text --><a href="http://www.miitbeian.gov.cn/">京ICP备10211739号</a>
+         <!-- react-text: 990 --> | 
+         <!-- /react-text --><a href="http://www.meituan.com/about/rules" target="_blank">电子公告服务规则</a></p>
+        <p><a href="http://i.meituan.com/brunch/default/right" target="_blank">广播电视节目制作经营许可证（京）字第03889号</a></p>
+       </div>
+       <div class="footer-copyright-right">
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502025545" target="_blank">京公网安备11010502025545号</a>
+        <div class="footer-copyright-cert">
+         <a class="sp-ft sp-ft--record" href="http://www.meituan.com/about/openinfo" title="备案信息" target="_blank">备案信息</a>
+         <a class="sp-ft sp-ft--knet" href="http://t.knet.cn/index_new.jsp" title="可信网站认证" target="_blank">可信网站</a>
+         <a class="sp-ft sp-ft--12315" href="http://www.bj315.org/xfwq/lstd/201209/t20120910_3344.shtml?dnrpluojqxbceiqq" title="12315消费争议" target="_blank">12315消费争议</a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div>
+ </body>
+</html>

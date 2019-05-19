@@ -1,0 +1,375 @@
+<!--
+--------《Python从菜鸟到高手》源代码------------
+
+欧瑞科技版权所有
+作者：李宁
+如有任何技术问题，请加QQ技术讨论群：264268059    
+或关注“极客起源”订阅号或“欧瑞科技”服务号或扫码关注订阅号和服务号，二维码在源代码根目录
+如果QQ群已满，请访问https://geekori.com，在右侧查看最新的QQ群，同时可以扫码关注公众号
+
+“欧瑞学院”是欧瑞科技旗下在线IT教育学院，包含大量IT前沿视频课程，
+请访问http://geekori.com/edu或关注前面提到的订阅号和服务号，进入移动版的欧瑞学院
+
+“极客题库”是欧瑞科技旗下在线题库，请扫描源代码根目录中的小程序码安装“极客题库”小程序
+
+关于更多信息，请访问下面的页面
+https://geekori.com/help/videocourse/readme.html
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+   <head> 
+      <meta charset="UTF-8"/> 
+      <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" /> 
+      <meta name="renderer" content="webkit" /> 
+      <title>推荐教程 - 技术教程 - geekori.com</title> 
+      <meta name="description" content="极客起源IT问答社区（geekori.com）是欧瑞科技旗下IT问答社区，欧瑞科技旗下包括IT问答、博客、头条、欧瑞学院、极客题库等产品。我们的宗旨是为IT从业者和编程爱好者提供一个纯粹，高质量的技术交流和学习平台， 与开发者一起学习、交流与成长，让开发者从中体会到编程是世界上最伟大的工作。我们的目标是让程序改变世界成为每一位开发者的使命！"/><meta name="keywords" content="geekori,极客起源,问答社区,IT技术社区,编程社区,编程社区,技术问答,技术文章,技术博客,技术笔记,视频课程,题库,练习题,技术活动,招聘,程序员招聘,开发者,程序员,极客,编程,代码,开源"/>
+      <link rel="shortcut icon" href="https://geekori.com/images/logo2.png">
+      <link rel="stylesheet" href="./css/sty1.css" /> 
+      <link rel="stylesheet" href="./css/sty2.css" /> 
+      <link rel="stylesheet" href="./css/sty3.css" /> 
+      <link rel="stylesheet" type="text/css" href="./dist/css/wangEditor.min.css">
+      <script src="./js/jquery-1.7.2.min.js"></script>
+      <script src="./js/public.js"></script>
+   </head> 
+ <body class="qa-index "> 
+  <div class="geek_head">
+    <div class="global-nav"> 
+     <nav class="container nav"> 
+      <div class="row hidden-xs">  
+       <div class="col-md-4 user-menu"> 
+        <ul class="opts list-inline hidden-xs"> 
+                  <li class="opts__item"> <a class="SFLogin em" id="login" href="javascript:void(0);">注册\登录</a></li> 
+ 
+
+
+
+
+<div id="back-to-top" style="width:190px;display: none; position:fixed; top:75%;right:5%;z-index:100;">
+    <div id="top_ewm" style=" width:130px;z-index: 101;float:left;display: none">
+      <img width="100%" src="./images/ewm.jpg" title="官方公众号">
+    </div> 
+    <div style="width:50px; float: right">
+    <div style="height:60px;margin-bottom: 10px; border-radius: 10px; background-color: #1571FA;padding-top: 8px">
+        <a id="ewm_show" href="javascript:;"><img width="100%" src="./images/erlogo.png" title="官方公众号"></a>
+    </div>
+    <a href="javascript:;" onclick="gotoTop(2,30)"><img style="border-radius: 10px" title="回顶部" src="./images/top.png" alt=""></a><br>
+    </div>
+</div>
+<script>
+ $('#ewm_show').click(function(){
+    if($("#top_ewm").css("display")=="none"){
+        $("#top_ewm").fadeIn(1000);
+    }else{
+        $("#top_ewm").fadeOut(500);
+    }
+ });
+
+ $(window).scroll(function(){
+    if ($(window).scrollTop()>100){
+        $("#back-to-top").fadeIn(1500);
+    }
+    else
+    {
+        $("#back-to-top").fadeOut(1500);
+    }
+});
+//speed 滚动速度 time 时间间隔
+function gotoTop(speed,time){
+    speed = speed || 2;
+    time = time || 16;
+    // 滚动条到页面顶部的水平距离
+    var x = document.body.scrollLeft;
+    // 滚动条到页面顶部的垂直距离
+    var y = document.body.scrollTop;
+    // 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小
+    speed++; 
+    window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+    // 如果距离不为零, 继续调用迭代本函数
+    if(x > 0 || y > 0) {
+        window.setTimeout("gotoTop(" + speed + ", " + time + ")", time);
+    }
+}
+</script>        
+
+
+        </ul> 
+       </div> 
+      </div> 
+     </nav> 
+    </div>
+  </div> 
+  <div class="opts__item--letter mail-item">
+ <div class="panel panel-default" style="margin:0"> 
+  <div class="panel-heading">
+    消息<a href="javascript:;" class="mail-close">关闭</a>
+  </div>
+  <div class="panel-body">
+    <div class="tab-content mail-content">
+        <ul class="mCustomScrollbar-message" style="list-style: none;width:90%">
+          暂无新消息!        </ul>
+    </div>
+  </div>
+  <div class="panel-footer">
+   <div class="row">
+    <div class="col-sm-6">
+          </div>
+    <div class="col-sm-6">
+     <a class="opts__item--message-view-all" href="./mailCenter.php">查看全部 &raquo;</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>  <div class="global-nav sf-header sf-header--index"> 
+   <nav class="container nav"> 
+    <div class="row hidden-xs"> 
+      <div class="col-sm-10 col-md-8 col-lg-7"> 
+        <div class="sf-header__logo"> 
+         <h1 id='geek_logo'><a href="./index.php">geekOri.com</a></h1> 
+        </div> 
+        <ul class="menu list-inline pull-left hidden-xs"> 
+         <li class="menu__item"><a id="item_checked" href="./index.php">技术教程</a></li>
+         <li class="menu__item"><a href="./que.php">问答</a></li> 
+         <li class="menu__item"><a href="./news.php">头条</a></li> 
+         <li class="menu__item"><a href="./blogs.php">博客</a></li>
+         <li class="menu__item"><a href="./books.php">读书频道</a></li> 
+         <li class="menu__item"><a href="./source.php">开源项目</a></li>
+         
+         <li class="menu__item"><a href="http://edu.geekori.com/">欧瑞学院</a></li>
+<!-- <li class="menu__item"><a href="http://edu.geekori.com/">极客题库</a></li> -->
+              </ul> 
+      </div> 
+    </div> 
+   </nav> 
+  </div> 
+  <div class="global-navTags"> 
+   <div class="container">
+    <nav class="nav">
+     <ul class="nav__list"> 
+      <li class="nav__item tag-nav__item"><a href="./index.php">推荐教程</a></li> 
+      <li class="nav__item nav__item--split"><span class="split" style="color:white">|</span></li> 
+            <li class="nav__item tag-nav__item tag_62"><a href="./index.php?tag_id=62">Java EE</a></li>
+            <li class="nav__item tag-nav__item tag_79"><a href="./index.php?tag_id=79">Cocos2d-x/Cocos2d-js</a></li>
+       
+      <!-- <li class="nav__item nav__item--more">      </li>  -->
+     </ul>
+    </nav>
+   </div>
+  </div> 
+  <div class="wrap"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-xs-12 col-md-9 main"> 
+     <div style="width: 100%;height:20px;color:#8a6d3b; font-size: 20px;margin-top: 20px;">技术教程 :</div><hr>
+      <div class="stream-list blog-stream"> 
+             <section class="stream-list__item"> 
+        <div class="summary" style="overflow: hidden"> 
+         <h2 class="title"><a href="courseDetails.php?cid=1">Java Web从入门到精通</a></h2> 
+         <div style="width:200px;float: left;">
+           <a href="courseDetails.php?cid=1"><img style="width:95%;height:100px;" src="http://geekori.com/images/editorUpload/17-11/uploadImg_681041510820048.jpg  " alt=""></a>
+         </div>
+         <p class="excerpt wordbreak hidden-xs">本教程从基础知识开始讲起，引领读者逐步深入JSP/Servlet的核心技术，主要内容不包括Java和Java Web开发环境搭建，使用JDBC、JSP和Servlet的基础知识，以及一些Java Web的高级技术，如表达式语言（EL）、国际化、JSP标准标签库(JSTL)、自定义标签、简单标签与标签文件、过滤器（Filter）和监听器等。...</p>
+         <div style="margin-left: 30px">
+           <ul class="taglist--inline ib">
+                       </ul> 
+         </div>
+        </div> 
+       </section> 
+             </div>
+      <div style="width: 100%;height:20px;color:#8a6d3b; font-size: 20px">课程推荐 :</div><hr>
+      <div style="width:100%"> 
+        <div style="width:90%;margin-left: 5%;">
+                    <div style="width:33%;padding:25px;float:left;height: 180px" title="Java基础教程">
+            <!-- <img class="avatar-24" src="./images/head.jpg"/> -->
+            <a target="blank" href="https://geekori.com/edu/course.php?c_id=3">
+            <img src="https://geekori.com/../images/weixinimg/17-08/p3.png" width="100%" height="120">
+            <div style="height:40px;margin-top: 10px;word-break:break-all;overflow:hidden;text-align:center">Java基础教程</div>
+            </a>
+          </div>
+                    <div style="width:33%;padding:25px;float:left;height: 180px" title="Android App性能调优、内存泄露检测">
+            <!-- <img class="avatar-24" src="./images/head.jpg"/> -->
+            <a target="blank" href="https://geekori.com/edu/course.php?c_id=7">
+            <img src="https://geekori.com/../images/weixinimg/17-08/p7.png" width="100%" height="120">
+            <div style="height:40px;margin-top: 10px;word-break:break-all;overflow:hidden;text-align:center">Android App性能调优、内存泄露检测</div>
+            </a>
+          </div>
+                    <div style="width:33%;padding:25px;float:left;height: 180px" title="Android5.x顶级课程">
+            <!-- <img class="avatar-24" src="./images/head.jpg"/> -->
+            <a target="blank" href="https://geekori.com/edu/course.php?c_id=6">
+            <img src="https://geekori.com/../images/weixinimg/17-08/p6.png" width="100%" height="120">
+            <div style="height:40px;margin-top: 10px;word-break:break-all;overflow:hidden;text-align:center">Android5.x顶级课程</div>
+            </a>
+          </div>
+                    <div style="width:33%;padding:25px;float:left;height: 180px" title="征服React Native">
+            <!-- <img class="avatar-24" src="./images/head.jpg"/> -->
+            <a target="blank" href="https://geekori.com/edu/course.php?c_id=5">
+            <img src="https://geekori.com/../images/weixinimg/17-08/p5.png" width="100%" height="120">
+            <div style="height:40px;margin-top: 10px;word-break:break-all;overflow:hidden;text-align:center">征服React Native</div>
+            </a>
+          </div>
+                    <div style="width:33%;padding:25px;float:left;height: 180px" title="征服Kotlin">
+            <!-- <img class="avatar-24" src="./images/head.jpg"/> -->
+            <a target="blank" href="https://geekori.com/edu/course.php?c_id=28">
+            <img src="https://geekori.com/../images/weixinimg/17-08/p28.png" width="100%" height="120">
+            <div style="height:40px;margin-top: 10px;word-break:break-all;overflow:hidden;text-align:center">征服Kotlin</div>
+            </a>
+          </div>
+                    <div style="width:33%;padding:25px;float:left;height: 180px" title="基于XMPP的聊天客户端">
+            <!-- <img class="avatar-24" src="./images/head.jpg"/> -->
+            <a target="blank" href="https://geekori.com/edu/course.php?c_id=8">
+            <img src="https://geekori.com/../images/weixinimg/17-08/p8.png" width="100%" height="120">
+            <div style="height:40px;margin-top: 10px;word-break:break-all;overflow:hidden;text-align:center">基于XMPP的聊天客户端</div>
+            </a>
+          </div>
+                  </div>
+        <div style="clear: both"></div><hr>
+        <div style="clear: both;width:100%;text-align: center;margin-top: 20px"><a href="https://geekori.com/edu" target="blank">更多课程...</a></div>
+      </div> 
+      
+     </div> 
+     <div class="col-xs-12 col-md-3 side mt30"> 
+      <div class="side-ask alert alert-warning"> 
+        <h4>技术交流</h4>
+        <ol id="usersWeekly" class="widget-top10">
+          <li class="text-muted">
+            QQ群号码:264268059
+          </li>
+          <li class="text-muted">
+            关注订阅号（极客起源），每天分享精彩技术文章:<br/>
+            <img src="./images/ewm_dy.jpg" width="100%">
+          </li>
+        </ol>
+        </div>
+        <hr/>
+        <div class="side-ask alert alert-warning"> 
+          <h4>图书推荐</h4>
+          <ol  id="usersWeekly" class="widget-top10">
+            <li class="text-muted">
+              <a href="https://geekori.com/bookDetails.php?bid=16" title="Kotlin开发入门精要"  style="overflow: visible">
+              Kotlin开发入门精要
+              <img src="https://img10.360buyimg.com/n1/s200x200_jfs/t8893/90/419428909/165104/be8e6639/59a7aa3cN7860409c.jpg" width="100%">
+              </a>
+            </li>
+          </ol>
+        </div>
+        <hr>
+        <div class="side-ask alert alert-warning"> 
+          <h4>博客推荐</h4>
+          <ol  id="usersWeekly" class="widget-top10">
+                       <li class="text-muted">
+              <a href="blogDetails.php?blog_id=58" title="Linux任务调度服务：crond"  style="overflow: visible">Linux任务调度服务：crond</a>
+            </li>
+                       <li class="text-muted">
+              <a href="blogDetails.php?blog_id=57" title="谷歌黑板报：AlphaGo的下一步"  style="overflow: visible">谷歌黑板报：AlphaGo的下一步</a>
+            </li>
+                       <li class="text-muted">
+              <a href="blogDetails.php?blog_id=38" title="使用Android NDK和Java测试Linux驱动"  style="overflow: visible">使用Android NDK和Java测试Linux驱动</a>
+            </li>
+                       <li class="text-muted">
+              <a href="blogDetails.php?blog_id=36" title="Android的init过程详解（一）"  style="overflow: visible">Android的init过程详解（一）</a>
+            </li>
+                       <li class="text-muted">
+              <a href="blogDetails.php?blog_id=37" title="Android的init过程（二）：初始化语言（init.rc）解析"  style="overflow: visible">Android的init过程（二）：初始化语言（init.rc）解析</a>
+            </li>
+                     </ol>
+        </div>
+     </div> 
+    </div> 
+  </div> 
+  </div> 
+  <footer id="footer"> 
+    <div class="copyright">
+    Copyright &copy; 2016-2017 geekori.com 
+    <a target="_blank" href="http://www.miibeian.gov.cn/" rel="nofollow">辽ICP备 16003609号</a> &nbsp; 
+    </div> 
+  </footer>
+ </body>
+</html>
+<div class="modal-content" style="width: 60%;height:574px"> 
+ <div class="modal-header"> 
+  <button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> 
+  <h4 class="modal-title">注册/登录</h4> 
+ </div> 
+ <div class="modal-body"> 
+  <p class="sfModal-content"> </p>
+  <div class="row bg-white login-modal"> 
+   <div class="col-md-4 col-sm-12 col-md-push-7 login-wrap"> 
+    <h1 class="h4 text-muted login-title">用户登录</h1> 
+    <form action="./action/action.php?a=login" method="POST" role="form" class="mt30"> 
+     <div class="form-group"> 
+      <label for="username" class="control-label">用户名\手机号\Email</label> 
+      <font id="logincheck" style="float: right;" color="red"></font>
+      <input type="text" class="form-control" name="user_name" required="" placeholder="用户名/手机号/Email" autocomplete="off" /> 
+     </div> 
+     <div class="form-group"> 
+      <label class="control-label">密码</label>
+      <span class="pull-right"><a href="./backPass.php">忘记密码</a></span> 
+      <input type="password" class="form-control" name="password" required="" placeholder="密码" /> 
+     </div> 
+     <div class="form-group clearfix"> 
+      <div class="checkbox pull-left"> 
+       <label><input name="remember" type="checkbox" value="1" checked="" /> 记住登录状态(保存一周)</label> 
+      </div> 
+      <button type="submit" class="btn btn-primary pull-right pl20 pr20" style="pointer-events: auto;">登录 </button> 
+     </div> 
+    </form> 
+    <a target='_blank' href="./weixinUpload/ticket.php"><img height="25px" src="./images/weixin.png" alt="微信">微信登录</a>
+   </div> 
+   <div class="login-vline hidden-xs"></div> 
+   <div class="col-md-4 col-md-pull-3 col-sm-12 login-wrap"> 
+    <h1 class="h4 text-muted login-title">注册新账号</h1> 
+    <form action="./action/action.php?a=reg" method="POST" role="form" id="account" class="mt30"> 
+     <div class="form-group"> 
+      <label for="name" class="required control-label">名字</label> 
+      <font id="usercheck" style="float: right;" color="red"></font> 
+      <input type="text" class="form-control form-control-username" name="user_name" required="" placeholder="常用用户名" /> 
+     </div> 
+     <div class="form-group"> 
+      <label for="password" class="required control-label">密码</label> 
+      <font id="passcheck" style="float: right;" color="red"></font> 
+      <input type="password" class="form-control form-control-pass" value="" autocomplete="off" name="password" required="" placeholder="不少于 6 位的数字,字母组合" /> 
+     </div> 
+     <div class="form-group"> 
+      <label for="repassword" class="control-label">确认密码</label> 
+      <font id="repasscheck" style="float: right;" color="red"></font> 
+      <input type="password" class="form-control form-control-repass" value="" autocomplete="off" name="repassword" required="" placeholder="确认密码" /> 
+     </div> 
+     <div class="form-group"> 
+      <label class="required control-label">验证码</label> 
+      <font id="codecheck" style="float: right;" color="red"></font> 
+      <input type="text" class="form-control form-control-code" id="captcha" required="" placeholder="请输入下方的验证码" /> 
+      <div class="mt10"> 
+       <img src="./library/code.php" onclick="this.src='./library/code.php?id='+Math.random();" class="captcha" width="70" height="23" /> 
+      </div> 
+     </div>
+     <div class="form-group clearfix"> 
+      <div class="checkbox pull-left">
+        同意并接受
+       <a href="./tos.html" target="_blank">《服务条款》</a> 
+      </div> 
+      <button type="submit" class="btn btn-primary pl20 pr20 pull-right _reg" style="pointer-events: auto;">注册 </button> 
+     </div> 
+    </form> 
+   </div> 
+  </div> 
+  <div class="text-center text-muted mt30"> 
+  </div> 
+  <p></p> 
+ </div> 
+</div><script>
+var tag=getUrlParam('tag_id');//标签栏
+if(!tag){
+  $('.container .nav__list li:first-child').addClass('active').siblings().removeClass('active');
+}else{
+  $('.tag_'+tag).addClass('active').siblings().removeClass('active');
+}
+var order=getUrlParam('que_order');
+if(!order){
+$('.nav-tabs-zen li:first-child').addClass('active').siblings().removeClass('active');
+}else{
+$('.order_'+order).addClass('active').siblings().removeClass('active');
+}
+//多条件筛选(2个)
+</script> 

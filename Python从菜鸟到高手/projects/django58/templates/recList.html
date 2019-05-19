@@ -1,0 +1,267 @@
+<!--
+--------《Python从菜鸟到高手》源代码------------
+
+欧瑞科技版权所有
+作者：李宁
+如有任何技术问题，请加QQ技术讨论群：264268059    
+或关注“极客起源”订阅号或“欧瑞科技”服务号或扫码关注订阅号和服务号，二维码在源代码根目录
+如果QQ群已满，请访问https://geekori.com，在右侧查看最新的QQ群，同时可以扫码关注公众号
+
+“欧瑞学院”是欧瑞科技旗下在线IT教育学院，包含大量IT前沿视频课程，
+请访问http://geekori.com/edu或关注前面提到的订阅号和服务号，进入移动版的欧瑞学院
+
+“极客题库”是欧瑞科技旗下在线题库，请扫描源代码根目录中的小程序码安装“极客题库”小程序
+
+关于更多信息，请访问下面的页面
+https://geekori.com/help/videocourse/readme.html
+
+
+
+-->
+{% extends "base.html" %}
+{% block title %}
+	{{typeInfo.name}} 招聘列表
+{% endblock %}
+{% block mainbody %}
+<!DOCTYPE html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8" /> 
+  <link rel="stylesheet" href="//c.58cdn.com.cn/job/pc/full/list/0.2/css/job_list_v20180108111602.css" />
+  <link rel="stylesheet" href="//c.58cdn.com.cn/job/pc/resume/delivery/1.0/css/pc_delivery_v20170803183150.css" />
+  <link rel="stylesheet" href="//c.58cdn.com.cn/componentsLoader/dist/CompontsLoader_v20171216170843.css" /> 
+ </head>
+ <body> 
+ <div id="commonTopbar" class="commonTopbar">
+	<div class="bar_right" style="margin-right:10%;">
+		<div id="commonTopbar_login">
+			{% if username %}
+			欢迎您~ <font color="red">{{username}}</font>
+			<span class="gap">|</span>
+			<a href="/logout" target="_self">注销</a>
+			{% else %}
+			<a href="/login" target="_self">登录</a>
+			<span class="gap">|</span>
+			<a href="/register" target="_self">注册</a>
+			{% endif %}
+		</div>
+	</div>
+</div>
+  <div class="header"> 
+   <div class="header_con job_detail_top_ad" id="brand_list_top_banner"></div>
+   <div class="header_con header_search">
+    <a class="icon_58zp" href="/recruitment" target="_blank"></a> 
+    <div id="searchbar">
+     <div id="searchcon">
+      <em></em>
+      <span id="searchkey"><input type="text" id="keyword" placename="请输入职位名称或公司" class="keyword" autocomplete="off" /></span>
+     </div>
+     <a id="searchbtn" href="javascript:void(0);">搜职位</a>
+    </div> 
+   </div> 
+  </div> 
+  <div class="operate_bar">
+   <div class="con clearfix">
+    <div class="selected_signs clearfix"></div>
+    <div id="operate_search">
+     <em></em>
+     <span id="operate_searchkey"><input type="text" id="operate_keyword" placename="请输入职位名称或公司名称" class="keyword" autocomplete="off" /></span>
+     <a id="operate_searchbtn" href="javascript:void(0);">搜职位</a>
+    </div>
+    <a class="operate_link" href="">修改筛选</a>
+   </div>
+  </div> 
+  <div class="con"> 
+    <div class="bread clearfix">
+	    <div class="zp_crumb">
+	        <div class="crumb_item">
+	        	<a class="txt" href="/index">58同城</a>
+	        </div>&nbsp;&gt;&nbsp; 
+	        <div class="crumb_item">
+		        <a class="txt" href="">{{typeInfo.name}}</a>
+		        {%if welfareInfo%}
+				   >{{welfareInfo.name}}
+		        {%endif%}
+	        </div> 
+	    </div>
+    <!-- <a class="look_more" href="http://sy.58.com/qzyewu/" target="_blank"><span>查看沈阳销售简历</span><i class="iconfont icon_arrow_right"></i></a> -->
+    </div> 
+    <div class="filter">
+        <div class="select_options">
+            <div class="filter_item" id="filterJob">
+                <span class="filter_name">职位：</span>
+                <ul class="filter_items clearfix">
+                    {%for item in type%}
+                    <li><a href="/recList?type={{item.id}}">{{item.name}}</a></li>
+                    {%endfor%}
+                </ul>
+            </div>
+            <div class="filter_item" id="filterWel">
+                <span class="filter_name">福利：</span>
+                <ul class="filter_items clearfix">
+                    <li><a href="/recList?type={{typeInfo.id}}">不限</a></li>
+                    {%for item in welfareList%}
+                    <li><a href="/recList?type={{typeInfo.id}}&wid={{item.id}}">{{item.name}}</a></li>
+                    {%endfor%}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+	<div class="list_head">
+		<div class="list_top clearfix">
+			<span class="tabs clearfix current"><a class="current" target="_self">职位</a></span>
+		</div>
+	</div> 
+<div class="main clearfix">
+    <div class="leftCon"> 
+        <div id="recomInfocon"></div> 
+
+
+        <ul id="list_con"> 
+            {%for item in recList%}
+            <li class="job_item clearfix">
+                <div class="item_con job_title">
+                    <div class="job_name clearfix">
+                        <a href="/recDetails?id={{item.id}}" target="_blank" rel="nofollow"><span class="name">{{item.title}}</span></a>
+                        <i class="icons im-chat"></i>
+                    </div>
+                    <p class="job_salary">{{item.money}}<i class="unit">元/月</i></p> 
+                    <div class="job_wel clearfix"> 
+                        {%for witem in item.mname_list%}
+                        <span>{{witem}}</span> 
+                        {%endfor%}
+                    </div> 
+                </div>
+                <div class="item_con job_comp">
+                    <div class="comp_name"> 
+                        <a href="" target="_blank" class="fl" rel="nofollow" title="{{item.cname}}"> {{item.cname}} </a> 
+                    <!-- <i class="comp_icons mingqi"></i>  -->
+                    </div> 
+                    <p class="job_require">
+                        <span class="cate">{{item.job_name}}</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="xueli">{{item.edu}}</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="jingyan">{{item.exp}}</span>
+                    </p>
+                </div> 
+                <a class="item_con apply" href="javascript:void(0)" data-id="{{item.id}}">申请</a> 
+            </li> 
+            {%endfor%}
+        </ul> 
+
+        <script>
+            $('.apply').click(function(){
+                var rid=$(this).attr('data-id');
+                if(confirm('确认申请此职位?')){
+                    $.ajax({
+                        url:"/apply/",
+                        data:{rid:rid},
+                        dataType:"TEXT",
+                        type:"POST",
+                        success:function(data){
+                            if(data=='success'){
+                                alert('申请成功!')
+                            }else{
+                                alert('您已经申请过了!');
+                            }
+                        }
+                    });
+                }
+            })
+        </script>
+
+
+        <div id="pc_list_rec"></div>
+        <div id="bottom_zhaoshangjiameng_ad"></div>
+        <div id="direct_ad_bottom"></div>
+        <div id="wangmeng_list_bottom_ditong"></div> 
+        <div class="subitem_con seo_con">
+            <ul class="tab_ul"> 
+                <li class="tab_li"><a href="javascript:void(0)" class="tab_link active" id="friendLinks">友情链接</a></li> 
+                <li class="tab_li"><a href="javascript:void(0)" class="tab_link " id="relativePos">相关职位</a></li> 
+                <li class="tab_li"><a href="javascript:void(0)" class="tab_link " id="relativeRecommend">相关推荐</a></li> 
+                <li class="tab_li"><a href="javascript:void(0)" class="tab_link " id="hotJob">热门职位</a></li> 
+                <li class="tab_li"><a href="javascript:void(0)" class="tab_link " id="nearbyCity">周边城市</a></li> 
+                <li class="tab_li"><a href="javascript:void(0)" class="tab_link " id="hotSearch">热门搜索</a></li> 
+                <li class="tab_li"><a href="javascript:void(0)" class="tab_link " id="channelAbout">频道介绍</a></li> 
+            </ul> 
+        </div> 
+    </div>
+    <div class="rightCon" id="rightframe"> 
+        <div class="yunying"></div>
+        <div class="guanpei">
+            <a href="http://operation.58supin.com/fund/fundsupport" target="_blank">
+            <div class="title">
+                <i class="icon"></i>58管赔 安全入职
+            </div>
+            <div class="des">
+                <p>应聘带有以下标识的职位，<br />如被企业骗取押金等费用，<br />58管赔！</p>
+                <div class="clearfix">
+                    <i class="comp_icons mingqi"></i>
+                    <i class="comp_icons wlt">3年</i>
+                    <i class="comp_icons daizhao"></i>
+                    <i class="comp_icons hr"></i>
+                </div>
+            </div></a>
+        </div>
+        <div id="ad18"></div>
+        <div id="brand_yqcp"></div>
+        <div id="brand_md">
+            <div id="ad19"></div>
+        </div>
+        <div class="rec_job" id="pc_list_rec_right"></div> 
+        </div>
+    </div>
+</div> 
+
+
+  <div id="footer" class="footer">
+   <div id="upWrap">
+    <a target="_blank" href="http://about.58.com/help.html" rel="nofollow">常见问题</a>
+    <span>|</span>
+    <a target="_blank" href="http://about.58.com/" rel="nofollow">帮助中心</a>
+    <span>|</span>
+    <a target="_blank" href="http://about.58.com/feedback.html" rel="nofollow">意见反馈</a>
+    <span>|</span>
+    <a target="_blank" href="http://about.58.com/home/" rel="nofollow">了解58同城</a>
+    <span>|</span>
+    <a target="_blank" href="http://about.58.com/hr/" rel="nofollow">加入58同城</a>
+    <span>|</span>
+    <a target="_blank" href="http://fanqizha.58.com/" rel="nofollow">反欺诈联盟</a>
+    <span>|</span>
+    <a target="_blank" href="http://110.58.com" rel="nofollow">报案平台</a>
+    <span>|</span>
+    <a target="_blank" href="http://e.58.com" rel="nofollow">推广服务</a>
+    <span>|</span>
+    <a target="_blank" href="http://biz.58.com" rel="nofollow">渠道招商</a>
+    <span>|</span>
+    <a target="_blank" href="http://baozhang.58.com" rel="nofollow">先行赔付</a>
+    <span>|</span>
+    <a target="_blank" href="http://ir.58.com?PGTID=0d100000-0000-13da-8041-51f9a3a739fa&amp;ClickID=2" rel="nofollow">Investor Relations</a>
+   </div>
+   <div id="downWrap">
+    <em>2005-2016 58.com版权所有</em>
+    <span>|</span>
+    <em>京公网备案信息110105000809</em>
+    <span>|</span>
+    <a target="_blank" href="http://www.miibeian.gov.cn/" rel="nofollow">京ICP证060405</a>
+    <span>|</span>
+    <em>乙测资字11018014</em>
+    <span>|</span>
+    <a target="_blank" href="http://ir.58.com" rel="nofollow">Investor Relations</a>
+    <span>|</span>
+    <em>违法信息举报：4008135858&nbsp;&nbsp;jubao@58ganji.com</em>
+   </div>
+   <div class="fotBtmIcon">
+    <a target="_blank" id="fotBm_1" href="http://fanqizha.58.com"></a>
+    <a target="_blank" id="fotBm_2" href="http://www.12377.cn/"></a>
+    <a target="_blank" id="fotBm_3" href="http://www.12377.cn/node_548446.htm"></a>
+    <a target="_blank" id="fotBm_4" href="https://credit.szfw.org/CX20120918001650001720.html"></a>
+    <a target="_blank" id="fotBm_5" href="http://img.58cdn.com.cn/ui6/index/qyxinyong.jpg?v=3"></a>
+    <a target="_blank" id="fotBm_6" href="http://about.58.com/fqz/index.html"></a>
+   </div>
+  </div>
+  </div>  
+ </body>
+</html>
+{% endblock %}
